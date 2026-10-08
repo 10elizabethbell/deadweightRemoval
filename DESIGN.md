@@ -17,6 +17,7 @@ colors:
   blue-ink: "#0f4fa3"
   spark: "#8cc6ff"
   white: "#ffffff"
+  sms-bubble: "#1f8bff"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
@@ -56,10 +57,58 @@ typography:
     fontSize: "13.5px"
     fontWeight: 800
     letterSpacing: "0.06em"
+  display-desk:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(4rem, 5.5vw, 5.4rem)"
+    fontWeight: 900
+    lineHeight: 0.98
+    letterSpacing: "-0.01em"
+  numeral:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "58px"
+    fontWeight: 900
+    lineHeight: 0.85
+  numeral-desk:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "84px"
+    fontWeight: 900
+    lineHeight: 0.85
+  step-title:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "22px"
+    fontWeight: 900
+    lineHeight: 1.1
+  wordmark:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "21px"
+    fontWeight: 900
+    letterSpacing: "0.01em"
+  wordmark-sub:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "11.5px"
+    fontWeight: 800
+    letterSpacing: "0.32em"
+  button:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "18px"
+    fontWeight: 800
+  lede:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+  meta:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+  small:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "15px"
+    fontWeight: 700
 rounded:
   focus: "6px"
   control: "14px"
   card: "28px"
+  bubble: "20px"
   round: "50%"
 spacing:
   gutter-phone: "20px"

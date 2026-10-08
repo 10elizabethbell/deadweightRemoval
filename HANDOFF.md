@@ -55,4 +55,3 @@
 - Frame rate on older phones (~230 chunks + 4 chain seams; everything pauses off screen).
 - Reduced-motion still frame (code path exists, not screenshotted).
 - The concept-roll seed step of Impeccable's new-work flow was skipped: the build ran unattended per the pitch-site skill, and the world was chosen from the brief and logo without the interactive decision page.
-- DESIGN.md (written by the documenter from the shipped page) carries a simplified type ramp. With it present, Impeccable's detector flags 15 shipped values as "off the ramp" (wordmark 21px, step numerals 58/84px, the preview bubble's `#1f8bff` and 20px radius, etc.). These are documentation drift, not visual bugs. Either fold those sizes into DESIGN.md or snap the CSS to the ramp when you tune type.

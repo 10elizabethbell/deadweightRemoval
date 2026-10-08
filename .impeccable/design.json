@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-08T19:54:10.422985+00:00",
+  "generatedAt": "2026-10-08T19:56:32.356578+00:00",
   "title": "Design System: Deadweight Removal",
   "extensions": {
     "colorMeta": {
@@ -228,6 +228,21 @@
           "#d5d5d5",
           "#f2f2f2"
         ]
+      },
+      "sms-bubble": {
+        "role": "primary",
+        "displayName": "SMS Bubble",
+        "canonical": "#1f8bff",
+        "tonalRamp": [
+          "#052548",
+          "#08417f",
+          "#0c5db5",
+          "#0f7aec",
+          "#4398f3",
+          "#7ab6f6",
+          "#b0d4fa",
+          "#e7f2fd"
+        ]
       }
     },
     "typographyMeta": {
@@ -245,7 +260,7 @@
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Service names and step titles."
+        "purpose": "Service names."
       },
       "body": {
         "displayName": "Body",
@@ -258,6 +273,46 @@
       "label": {
         "displayName": "Label",
         "purpose": "Proof chips."
+      },
+      "display-desk": {
+        "displayName": "Display Desk",
+        "purpose": "Hero h1 clamp at 1000px and up."
+      },
+      "numeral": {
+        "displayName": "Step Numeral",
+        "purpose": "Step numerals on phones; Removal Blue, tabular."
+      },
+      "numeral-desk": {
+        "displayName": "Step Numeral Desk",
+        "purpose": "Step numerals at 760px and up."
+      },
+      "step-title": {
+        "displayName": "Step Title",
+        "purpose": "Uppercase step titles."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "DEADWEIGHT line of the top-bar wordmark."
+      },
+      "wordmark-sub": {
+        "displayName": "Wordmark Sub",
+        "purpose": "Spaced blue REMOVAL line of the wordmark."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary and secondary button labels."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section intro line on steel, Steel Ink, max 40ch."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Service blurbs, notes and preview-card text."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Top-bar call number and footer."
       }
     },
     "shadows": [
