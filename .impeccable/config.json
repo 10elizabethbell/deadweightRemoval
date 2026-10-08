@@ -2,19 +2,6 @@
   "detector": {
     "ignoreRules": [],
     "ignoreFiles": [],
-    "ignoreValues": [
-      {
-        "rule": "dark-glow",
-        "value": "#0f1b30",
-        "createdAt": "2026-10-08T19:43:09.294Z",
-        "reason": "pitch-site build: navy-tinted offset shadow on the white text-preview card, which sits on the light steel services section, not a dark ground (regex detector can't see section color)"
-      },
-      {
-        "rule": "radial-halo",
-        "value": "#24395c",
-        "createdAt": "2026-10-08T19:43:09.366Z",
-        "reason": "pitch-site build: low-chroma navy lift under the rubble pile reads as ground light for the pile; the world is drawn from the client's logo, which is itself backlit"
-      }
-    ]
+    "ignoreValues": []
   }
 }
