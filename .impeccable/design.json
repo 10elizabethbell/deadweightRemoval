@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T19:54:10.422985+00:00",
+  "title": "Design System: Deadweight Removal",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "neutral",
+        "displayName": "Navy Night",
+        "canonical": "#0f1b30",
+        "tonalRamp": [
+          "#12213a",
+          "#203a67",
+          "#2e5393",
+          "#3c6cc0",
+          "#668dcf",
+          "#93aedd",
+          "#bfcfeb",
+          "#ecf0f9"
+        ]
+      },
+      "navy-2": {
+        "role": "neutral",
+        "displayName": "Raised Navy",
+        "canonical": "#162745",
+        "tonalRamp": [
+          "#12213a",
+          "#213a66",
+          "#2f5392",
+          "#3d6cbf",
+          "#678dcf",
+          "#93aedd",
+          "#bfcfeb",
+          "#ecf0f9"
+        ]
+      },
+      "navy-3": {
+        "role": "neutral",
+        "displayName": "Raised Navy 3",
+        "canonical": "#21365c",
+        "tonalRamp": [
+          "#142138",
+          "#243a63",
+          "#33538e",
+          "#426db9",
+          "#6c8dca",
+          "#96aed9",
+          "#c1cfe9",
+          "#ecf1f8"
+        ]
+      },
+      "navy-glow": {
+        "role": "neutral",
+        "displayName": "Navy Glow",
+        "canonical": "#1b3157",
+        "tonalRamp": [
+          "#12213a",
+          "#203a67",
+          "#2e5393",
+          "#3c6cc0",
+          "#668dd0",
+          "#93aedd",
+          "#bfcfeb",
+          "#ecf0f9"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Steel",
+        "canonical": "#dfe6ef",
+        "tonalRamp": [
+          "#1a2533",
+          "#2d415a",
+          "#405d81",
+          "#5478a8",
+          "#7997bc",
+          "#a0b5d0",
+          "#c7d3e3",
+          "#eef2f7"
+        ]
+      },
+      "steel-2": {
+        "role": "neutral",
+        "displayName": "Steel Rule",
+        "canonical": "#c5d1df",
+        "tonalRamp": [
+          "#1b2531",
+          "#304257",
+          "#455e7c",
+          "#597ba2",
+          "#7e99b8",
+          "#a3b6cc",
+          "#c9d4e1",
+          "#eff2f6"
+        ]
+      },
+      "steel-ink": {
+        "role": "neutral",
+        "displayName": "Steel Ink",
+        "canonical": "#46566d",
+        "tonalRamp": [
+          "#1e252f",
+          "#354152",
+          "#4c5d76",
+          "#627999",
+          "#8597b1",
+          "#a8b5c7",
+          "#ccd3de",
+          "#eff2f5"
+        ]
+      },
+      "chrome": {
+        "role": "neutral",
+        "displayName": "Chrome",
+        "canonical": "#eef3f9",
+        "tonalRamp": [
+          "#142539",
+          "#234064",
+          "#325c8f",
+          "#4278ba",
+          "#6b96cb",
+          "#96b5da",
+          "#c1d3e9",
+          "#ecf2f8"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#a8b8cd",
+        "tonalRamp": [
+          "#1c2531",
+          "#314156",
+          "#465d7b",
+          "#5c79a0",
+          "#8097b6",
+          "#a5b5cb",
+          "#cad4e0",
+          "#eff2f6"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Removal Blue",
+        "canonical": "#2694f1",
+        "tonalRamp": [
+          "#052948",
+          "#08487f",
+          "#0c68b5",
+          "#0f87ec",
+          "#43a2f3",
+          "#7abdf6",
+          "#b0d8fa",
+          "#e7f3fd"
+        ]
+      },
+      "blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Blue",
+        "canonical": "#1462c4",
+        "tonalRamp": [
+          "#072345",
+          "#0c3d7a",
+          "#1258af",
+          "#1772e4",
+          "#4992ec",
+          "#7eb1f2",
+          "#b3d1f7",
+          "#e8f1fd"
+        ]
+      },
+      "blue-hover": {
+        "role": "primary",
+        "displayName": "Deep Blue Hover",
+        "canonical": "#1a70d8",
+        "tonalRamp": [
+          "#082344",
+          "#0e3e78",
+          "#1559ac",
+          "#1b74e0",
+          "#4c93e9",
+          "#80b3f0",
+          "#b4d2f6",
+          "#e8f1fc"
+        ]
+      },
+      "blue-ink": {
+        "role": "primary",
+        "displayName": "Blue Ink",
+        "canonical": "#0f4fa3",
+        "tonalRamp": [
+          "#062246",
+          "#0b3c7b",
+          "#1056b1",
+          "#1570e6",
+          "#4890ee",
+          "#7db0f3",
+          "#b2d0f8",
+          "#e8f1fd"
+        ]
+      },
+      "spark": {
+        "role": "primary",
+        "displayName": "Spark",
+        "canonical": "#8cc6ff",
+        "tonalRamp": [
+          "#00274c",
+          "#004487",
+          "#0061c1",
+          "#007ffb",
+          "#379cff",
+          "#71b9ff",
+          "#abd5ff",
+          "#e6f2ff"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#434343",
+          "#616161",
+          "#7e7e7e",
+          "#9b9b9b",
+          "#b8b8b8",
+          "#d5d5d5",
+          "#f2f2f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1 only; uppercase 900."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s."
+      },
+      "claim": {
+        "displayName": "Claim",
+        "purpose": "Promise-band lines."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service names and step titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Sentence-case copy, ~44ch."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero pitch and close area line, Mist with Chrome strong."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Proof chips."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-primary",
+        "value": "0 10px 22px -10px rgba(3,8,20,.7)",
+        "purpose": "Primary button at rest."
+      },
+      {
+        "name": "button-primary-hover",
+        "value": "0 16px 28px -12px rgba(3,8,20,.75)",
+        "purpose": "Primary button hover lift."
+      },
+      {
+        "name": "dock",
+        "value": "0 -10px 30px -12px rgba(0,0,0,.5)",
+        "purpose": "Phone dock, with backdrop-filter blur(10px)."
+      },
+      {
+        "name": "preview-card",
+        "value": "0 30px 60px -30px rgba(0,0,0,.32), 0 8px 20px -10px rgba(0,0,0,.18)",
+        "purpose": "Desktop text preview card."
+      },
+      {
+        "name": "logo-glow",
+        "value": "radial-gradient(closest-side, rgba(38,148,241,.32), rgba(38,148,241,0))",
+        "purpose": "Blue light behind the logo in each heap."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-snap",
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "purpose": "All UI transitions (buttons .25s, service rows .25-.3s, dock .35s)."
+      },
+      {
+        "name": "press",
+        "value": "scale(.97)",
+        "purpose": "Button :active."
+      },
+      {
+        "name": "DW.chain.speed",
+        "value": "2.0",
+        "purpose": "Chain wave speed; tunable in DW object."
+      },
+      {
+        "name": "DW.rubble.roll",
+        "value": "1.0",
+        "purpose": "Pile surface roll speed; tunable in DW object."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transitions off; canvases draw one still frame",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desk",
+        "value": "760px"
+      },
+      {
+        "name": "wide",
+        "value": "1000px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Text a photo)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action everywhere; always an sms: link with the quote template.",
+      "html": "<div style=\"background:#0f1b30;padding:20px\"><a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5z\"/></svg>Text a photo</a></div>",
+      "css": ".ds-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 22px;border-radius:14px;border:2px solid #2694f1;font:800 18px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .2s,box-shadow .25s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid #2694f1;outline-offset:3px} .ds-btn-primary{background:#1462c4;color:#fff;box-shadow:0 10px 22px -10px rgba(3,8,20,.7)} .ds-btn-primary:hover{background:#1a70d8;transform:translateY(-2px);box-shadow:0 16px 28px -12px rgba(3,8,20,.75)}"
+    },
+    {
+      "name": "Secondary Button (Call now)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Call action beside the primary; always a tel: link.",
+      "html": "<div style=\"background:#0f1b30;padding:20px\"><a class=\"ds-btn ds-btn-secondary\" href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z\"/></svg>Call now</a></div>",
+      "css": ".ds-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 22px;border-radius:14px;border:2px solid #2694f1;font:800 18px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .2s,box-shadow .25s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid #2694f1;outline-offset:3px} .ds-btn-secondary{background:rgba(15,27,48,.55);color:#eef3f9} .ds-btn-secondary:hover{background:#162745;transform:translateY(-2px)}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "service-row",
+      "description": "Full-width sms: link per service on the steel section, with arrow disc.",
+      "html": "<div style=\"background:#dfe6ef;padding:20px\"><a class=\"ds-svc\" href=\"#\"><span class=\"ds-svc-txt\"><b>Furniture removal</b><span>Couches, tables, dressers.</span></span><span class=\"ds-go\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a></div>",
+      "css": ".ds-svc{display:flex;align-items:center;gap:16px;padding:18px 2px;min-height:76px;text-decoration:none;color:#0f1b30;border-top:2px solid #c5d1df;border-bottom:2px solid #c5d1df;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;transition:background-color .2s} .ds-svc-txt{flex:1;transition:transform .25s cubic-bezier(.2,.8,.2,1)} .ds-svc-txt b{display:block;font-weight:900;text-transform:uppercase;font-size:1.5rem;line-height:1.05} .ds-svc-txt span{display:block;margin-top:4px;font-size:16px;color:#46566d} .ds-go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#1462c4;color:#fff;transition:transform .3s cubic-bezier(.2,.8,.2,1)} .ds-svc:hover{background:rgba(20,98,196,.07)} .ds-svc:hover .ds-svc-txt{transform:translateX(10px)} .ds-svc:hover .ds-go{transform:translateX(4px)} .ds-svc:focus-visible{outline:3px solid #2694f1;outline-offset:3px}"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Wordmark (DEADWEIGHT / spaced blue REMOVAL) and tap-to-call number.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-mark\" href=\"#\"><b>DEADWEIGHT</b><span>REMOVAL</span></a><a class=\"ds-call\" href=\"#\"><span style=\"color:#2694f1;display:flex\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z\"/></svg></span>609-852-8552</a></header>",
+      "css": ".ds-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:#0f1b30;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-mark{display:flex;flex-direction:column;text-decoration:none;line-height:1} .ds-mark b{font-weight:900;font-size:21px;letter-spacing:.01em;color:#eef3f9} .ds-mark span{font-weight:800;font-size:11.5px;letter-spacing:.32em;color:#2694f1;margin-top:3px} .ds-call{display:flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-weight:800;font-size:15px;color:#eef3f9;font-variant-numeric:tabular-nums} .ds-call:hover{color:#fff} .ds-call:focus-visible{outline:3px solid #2694f1;outline-offset:3px}"
+    },
+    {
+      "name": "Proof Chips",
+      "kind": "chip",
+      "refersTo": "",
+      "description": "Three flyer facts under the hero buttons.",
+      "html": "<ul class=\"ds-perks\"><li><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#2694f1\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>Same day service</li><li><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#2694f1\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>Insured</li><li><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#2694f1\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>5% off for cash</li></ul>",
+      "css": ".ds-perks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:16px;list-style:none;background:#0f1b30;font:800 13.5px/1.2 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#eef3f9} .ds-perks li{display:flex;align-items:center;gap:7px}"
+    },
+    {
+      "name": "Promise Band",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Deep-blue band of uppercase flyer claims with chain-link icons.",
+      "html": "<ul class=\"ds-claims\"><li><svg width=\"0.9em\" height=\"0.9em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#8cc6ff\" stroke-width=\"2.2\" aria-hidden=\"true\"><rect x=\"2.5\" y=\"8\" width=\"11\" height=\"8\" rx=\"4\"/><rect x=\"10.5\" y=\"8\" width=\"11\" height=\"8\" rx=\"4\"/></svg>Reliable &amp; professional</li><li><svg width=\"0.9em\" height=\"0.9em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#8cc6ff\" stroke-width=\"2.2\" aria-hidden=\"true\"><rect x=\"2.5\" y=\"8\" width=\"11\" height=\"8\" rx=\"4\"/><rect x=\"10.5\" y=\"8\" width=\"11\" height=\"8\" rx=\"4\"/></svg>Same day service</li><li><svg width=\"0.9em\" height=\"0.9em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#8cc6ff\" stroke-width=\"2.2\" aria-hidden=\"true\"><rect x=\"2.5\" y=\"8\" width=\"11\" height=\"8\" rx=\"4\"/><rect x=\"10.5\" y=\"8\" width=\"11\" height=\"8\" rx=\"4\"/></svg>Insured</li></ul>",
+      "css": ".ds-claims{list-style:none;margin:0;padding:24px;background:#1462c4;color:#fff;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-claims li{display:flex;align-items:center;gap:14px;font-weight:900;text-transform:uppercase;font-size:2rem;line-height:1.08;letter-spacing:-.01em;padding:8px 0}"
+    },
+    {
+      "name": "Text Preview Card",
+      "kind": "card",
+      "refersTo": "text-preview-card",
+      "description": "Desktop-only phone sheet showing the pre-filled text for the hovered service.",
+      "html": "<div style=\"background:#dfe6ef;padding:24px\"><aside class=\"ds-pv\"><div class=\"ds-pv-head\"><span class=\"ds-pv-av\"></span><span><b>Deadweight Removal</b><span>609-852-8552</span></span></div><p class=\"ds-pv-bubble\">Hi Deadweight Removal! I'd like a quote for furniture removal.\nWhat needs to go:\nTown:\nWhen works:\n(I'll attach a photo.)</p></aside></div>",
+      "css": ".ds-pv{background:#fff;border-radius:28px;padding:22px 22px 26px;max-width:340px;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;color:#0f1b30;box-shadow:0 30px 60px -30px rgba(0,0,0,.32),0 8px 20px -10px rgba(0,0,0,.18)} .ds-pv-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid #e3e8ef} .ds-pv-av{width:46px;height:46px;border-radius:50%;background:#0f1b30;flex:none} .ds-pv-head b{display:block;font-size:16px} .ds-pv-head span span{font-size:14px;color:#46566d} .ds-pv-bubble{margin:22px 0 0 auto;max-width:88%;background:#1f8bff;color:#fff;border-radius:20px 20px 6px 20px;padding:12px 15px;font-size:16px;line-height:1.4;white-space:pre-line}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Chains Come Off",
+    "overview": "The page is built from the client's own logo: a chrome strongman snapping steel chains over a pile of concrete chunks, electric blue light, navy night. The logo's materials are the page's materials. Rubble piles (canvas) sit at the top and bottom of the page with the cut-out logo standing in them. Sagging steel chains (canvas) join every section. Between them, the copy is flyer-loud: heavy uppercase headings, plain sentence-case body, the phone number everywhere.\n\nIt is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. A sticky Text/Call dock covers the space between the hero and closing buttons on phones. Motion is physical. Pointer and touch shove the pile and the chains, and a tap flicks a chunk away. All of it stops under reduced-motion.",
+    "keyCharacteristics": [
+      "Navy night ground, one steel-light section, one electric-blue band. That three-tone sequence is the page rhythm.",
+      "Heavy uppercase system sans for display, sentence case for body.",
+      "Two canvas signatures: the rubble heap with the logo and chain seams whose fill follows the chain.",
+      "One button component, two variants, used everywhere.",
+      "Real facts only. The phone number is the only call to action."
+    ],
+    "rules": [
+      {
+        "name": "The Never-Black Rule",
+        "body": "The darkest ground is Navy Night (`#0f1b30`). Never use `#000`. Shadows are tinted navy (`rgba(3,8,20,…)`).",
+        "section": "colors"
+      },
+      {
+        "name": "The Three-Ground Rule",
+        "body": "Sections use only navy, steel or deep blue as their ground. A new section picks one of these and gets a chain seam above and below it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Loud/Plain Rule",
+        "body": "Headings are uppercase weight 900. Body text is always sentence case. Never set a paragraph in caps, and never set a heading in mixed case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Number Rule",
+        "body": "The phone number always uses `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Glow-Not-Lift Rule",
+        "body": "To add emphasis on navy, add blue light behind the element. Don't stack shadowed cards.",
+        "section": "elevation & depth"
+      }
+    ],
+    "dos": [
+      "**Do** make every new call to action a `.btn-primary` (`sms:` with the quote template) or a `.btn-secondary` (`tel:`), at 58px.",
+      "**Do** put a chain seam between any two sections and set its `--from`/`--to` to the exact grounds.",
+      "**Do** keep the ground sequence to navy, steel and deep blue, and use Removal Blue for the one accent word in a heading.",
+      "**Do** use stroke SVG icons (2px, round caps) at 17–22px, colored with `currentColor`.",
+      "**Do** honor `prefers-reduced-motion`: the canvases render one still frame and all transitions are off."
+    ],
+    "donts": [
+      "**Don't** use pure black, or grey-neutral shadows on navy.",
+      "**Don't** load a webfont. The system stack is the owner's house style.",
+      "**Don't** add invented facts (prices, reviews, years, towns) to fill a component.",
+      "**Don't** separate sections with straight rules, CSS waves or plain color jumps. The chain is the divider.",
+      "**Don't** set body copy in uppercase."
+    ]
+  }
+}
