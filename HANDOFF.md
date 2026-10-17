@@ -3,7 +3,7 @@
 **Live:** https://10elizabethbell.github.io/deadweightRemoval/ · **Repo:** https://github.com/10elizabethbell/deadweightRemoval · **Built:** 2026-10-08 from Muse brief (Muse run 2026-10-08, Marlton NJ Local Business Group flyer post)
 
 ## What's built
-- **One page, phone first:** top bar (wordmark + tap-to-call number top right), hero (headline, one promise line, one Text a photo button), "What we haul" (6 services as short names), "Photo to gone" (3 steps), the flyer's promises on an electric-blue band, closing section with name, area, Text button and "See more of our work on Facebook", footer with name, area, number and Facebook.
+- **One page, phone first:** top bar (wordmark + tap-to-call number top right), hero (headline, one promise line, one Text a photo button), "What we haul" (6 services as short names), "Photo to gone" (3 steps), the flyer's promises on an electric-blue band, "Before & after" (two drag sliders and one cleared-garage photo, then a "See our Facebook for more of our work" button), closing section with name, area and Text button, footer with name, area, number and Facebook.
 - **World:** the client's own logo. Chiseled concrete chunks, snapped steel chains, electric blue, navy night. Navy ground (`#0f1b30`, never black), steel-light services section, blue promise band. System fonts, heavy uppercase display.
 - **Signature element:** a rubble pile along the bottom of the hero and the close, about 230 chunks on phones and 750 on desktop, drawn as shaded solid blocks. The pile's surface rolls, mouse or finger shoves chunks around with a spring wobble, and a tap or upward swipe flings top chunks clear: they lift away, fade into dust, and fresh junk drops back in. The real logo, cut out of its dark square with an alpha matte (`src-assets/logo-cut.png`, not committed), stands *in* the pile: back rows behind it, front rows in front. Blue dust motes rise and dodge the pointer.
 - **Chain seams:** every section boundary is a sagging, rippling steel chain (alternating ring and edge-on links) and the next section's color fills below the moving chain. Pushing it with a finger sends a wave along it. Below both piles the chain lies across the pile's base: the seam's top half is transparent.
@@ -24,10 +24,10 @@
 - **Area** is "South Jersey & surrounding areas" (flyer). Marlton/Burlington County is only where the post was found, so no towns are listed.
 
 ## Placeholders and gaps
-- **No work photos or before/afters.** The page leans on the motion and typography instead. Real truck/pile/cleared-basement shots would be the biggest upgrade.
+- **Work photos** (5, supplied by Ellie 2026-10-17): two garage before/after pairs, aligned on the back wall and cropped 4:5 into `img/` (800px WebP); the third is an after shot looking out at the loaded trailer, with the person by the car blurred. Raw originals are in `src-assets/` (ignored). Framed family photos in one after shot fall outside the crop.
 - **Flyer image not obtained:** it needs a logged-in Facebook browser (the og:image of the group post is the group's Marlton clock cover). So **"FREE ESTIMATES" is not on the page**, as Muse advised. If the flyer confirms it, add it to the perks and the promise band.
 - No hours, no owner name, no email, no reviews, no prices. None of these appear on the page. When there's an email, it goes in the footer only.
-- **Facebook link** goes to page ID 61587889134420 from the brief. That page is restricted to logged-out viewers, so I couldn't check that it shows their work. With no work photos on the site, the "see more of our work" link sits in the close, under the Text button.
+- **Facebook link** goes to page ID 61587889134420 from the brief. That page is restricted to logged-out viewers, so I couldn't check that it shows their work. The button sits right under the before/after photos.
 - The logo is a 720px Facebook profile image, cut out and embedded at 576px WebP (47KB, most of the 107KB page). Ask for the original file; a vector would be lighter and sharper.
 - The hero's proof chips (Same day / Insured / 5% off) were cut for a single focal point; the promise band still says all three.
 
@@ -47,7 +47,6 @@
 - **Promise band on desktop** wraps in a two-column grid with a big gap; a single column or a marquee may read better.
 - **Runner-up world: "Snap the chains."** Swinging steel chains hang from the top of the hero (verlet rope physics). Drag one hard enough and it snaps with a blue spark, echoing the logo's strongman. The pile is more "junk"; chains are more "brand".
 - **Rubble that drains:** a "clear it" moment where scrolling into the close section empties the pile (haul-away), then it refills.
-- **Before/after sliders** once they send cleanout photos (taste section 4).
 - **Booking form page** (`book.html`) composing the same text: item type, size (single item / half truck / full truck), town, day, time window.
 - **Truck-load size picker** ("¼ / ½ / full truck") that fills a little truck bed with rubble. Only if they price by load.
 - Promise band could get a slowly scrolling marquee of the flyer lines.
