@@ -98,6 +98,10 @@ typography:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "15px"
     fontWeight: 700
+  caption:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
 rounded:
   focus: "6px"
   control: "14px"
@@ -199,7 +203,8 @@ Navy dominates, steel lightens, electric blue does the work. All values come fro
 - **Title** (900, uppercase, `clamp(1.25rem, 5.6vw, 1.6rem)`): service names. Step titles are 22px.
 - **Step numeral** (900, Removal Blue, 58px phone / 84px desktop, tabular).
 - **Lead** (400, `clamp(17px, 4.7vw, 20px)`, Mist, max 34–36ch): the hero pitch and close area line. Key phrases are set in `<strong>` (700, Chrome).
-- **Body** (400, 17px/1.55): sentence case, max ~44ch. Service blurbs and notes are 16px.
+- **Body** (400, 17px/1.55): sentence case, max ~44ch. Notes are 16px.
+- **Caption** (400, 14px, Steel Ink): the desktop text-preview card's number and caption.
 
 ### Named Rules
 **The Loud/Plain Rule.** Headings are uppercase weight 900. Body text is always sentence case. Never set a paragraph in caps, and never set a heading in mixed case.

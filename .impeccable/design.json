@@ -294,6 +294,10 @@
       "small": {
         "displayName": "Small",
         "purpose": "Top-bar call number and footer."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Desktop text-preview number and caption, 14px."
       }
     },
     "shadows": [
