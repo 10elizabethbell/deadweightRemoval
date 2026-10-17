@@ -639,7 +639,7 @@ var DW = {
       var bw = 14 * U, span = Math.max(1, Math.min(cols.length, Math.round(it.s.r * 1.5 / bw))), best = 0, bh = 1e9, i, j, m;
       for (i = 0; i + span <= cols.length; i++) { m = 0; for (j = i; j < i + span; j++) m = Math.max(m, cols[j]); m += Math.random() * 6 * U; if (m < bh) { bh = m; best = i; } }
       var top = 0; for (j = best; j < best + span; j++) top = Math.max(top, cols[j]);
-      it.lx = (best + span / 2) * bw + (TL - cols.length * bw) / 2; it.ly = -top - it.s.r * 0.5;
+      var hw = it.s.r * 0.85; it.lx = Math.max(hw, Math.min(TL - hw, (best + span / 2) * bw + (TL - cols.length * bw) / 2)); it.ly = -top - it.s.r * 0.5;
       for (j = best; j < best + span; j++) cols[j] = top + it.s.r;
       it.ox = it.oy = it.vx = it.vy = it.a = it.av = 0;
     }
@@ -665,7 +665,7 @@ var DW = {
     }
     function handsY(){ return GY - 48 * U * Q.person; }
     function crew(dt, near, lx, ly, R, R2){
-      var tx = trailerX + truck.x, floor = GY - WR * 1.3 - 3 * U, i, it, o, k;
+      var tx = trailerX + truck.x, floor = GY - WR * 1.3 - 3 * U, wallTop = GY - WR * 1.3 - WH, i, it, o, k;
       // truck cycle
       if (dt) {
         if (truck.st === 'parked') {
@@ -717,14 +717,24 @@ var DW = {
         it = load[i]; var hx = tx + it.lx, hy = floor + it.ly;
         if (it.st === 'toss') {
           it.t += dt / 0.45; k = Math.min(1, it.t);
-          it.x = it.sx + (hx - it.sx) * k; it.y = it.sy + (hy - it.sy) * k - Math.sin(k * Math.PI) * 34 * U;
+          var arc = Math.max(34 * U, Math.max(it.sy, hy) - (wallTop - it.s.r * 0.7)); // high enough to clear the wall
+          it.x = it.sx + (hx - it.sx) * k; it.y = it.sy + (hy - it.sy) * k - Math.sin(k * Math.PI) * arc;
           if (k >= 1) it.st = 'in';
           continue;
         }
         var px = hx + it.ox, py = hy + it.oy;
         if (dt) { shove(it, px, py, 0.3, near, lx, ly, R, R2, dt); spring(it, dt); }
+        // the walls and floor hold it in: it can only leave over the top
+        var hw = it.s.r * 0.85, half = it.s.r * 0.5, inside = hy + it.oy + half > wallTop;
+        if (inside) {
+          var ax = it.lx + it.ox;
+          if (ax < hw) { it.ox = hw - it.lx; if (it.vx < 0) it.vx *= -0.3; }
+          else if (ax > TL - hw) { it.ox = TL - hw - it.lx; if (it.vx > 0) it.vx *= -0.3; }
+        }
+        if (it.ly + it.oy > -half) { it.oy = -half - it.ly; if (it.vy > 0) it.vy *= -0.3; }
         it.x = hx + it.ox; it.y = hy + it.oy;
-        if ((it.oy < -it.s.r * 1.1 && it.vy < -140) || Math.abs(it.ox) > it.s.r * 2.4) {
+        var over = it.y + half < wallTop, outX = it.lx + it.ox < -half || it.lx + it.ox > TL + half;
+        if (over && (it.vy < -140 || outX)) {
           load.splice(i, 1);
           loose.push({ s: it.s, x: it.x, y: it.y, vx: it.vx * 0.8, vy: Math.min(it.vy * 0.8, -160), a: it.rot + it.a, av: it.av || (Math.random() - .5) * 8, st: 'fly', age: 0, fade: 0 });
         }
