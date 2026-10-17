@@ -52,7 +52,7 @@
       "navy-glow": {
         "role": "neutral",
         "displayName": "Navy Glow",
-        "canonical": "#1b3157",
+        "canonical": "#152644",
         "tonalRamp": [
           "#12213a",
           "#203a67",
@@ -227,21 +227,6 @@
           "#b8b8b8",
           "#d5d5d5",
           "#f2f2f2"
-        ]
-      },
-      "sms-bubble": {
-        "role": "primary",
-        "displayName": "SMS Bubble",
-        "canonical": "#1f8bff",
-        "tonalRamp": [
-          "#052548",
-          "#08417f",
-          "#0c5db5",
-          "#0f7aec",
-          "#4398f3",
-          "#7ab6f6",
-          "#b0d4fa",
-          "#e7f2fd"
         ]
       }
     },
@@ -435,7 +420,7 @@
       "refersTo": "text-preview-card",
       "description": "Desktop-only phone sheet showing the pre-filled text for the hovered service.",
       "html": "<div style=\"background:#dfe6ef;padding:24px\"><aside class=\"ds-pv\"><div class=\"ds-pv-head\"><span class=\"ds-pv-av\"></span><span><b>Deadweight Removal</b><span>609-852-8552</span></span></div><p class=\"ds-pv-bubble\">Hi Deadweight Removal! I'd like a quote for furniture removal.\nWhat needs to go:\nTown:\nWhen works:\n(I'll attach a photo.)</p></aside></div>",
-      "css": ".ds-pv{background:#fff;border-radius:28px;padding:22px 22px 26px;max-width:340px;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;color:#0f1b30;box-shadow:0 30px 60px -30px rgba(0,0,0,.32),0 8px 20px -10px rgba(0,0,0,.18)} .ds-pv-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid #e3e8ef} .ds-pv-av{width:46px;height:46px;border-radius:50%;background:#0f1b30;flex:none} .ds-pv-head b{display:block;font-size:16px} .ds-pv-head span span{font-size:14px;color:#46566d} .ds-pv-bubble{margin:22px 0 0 auto;max-width:88%;background:#1f8bff;color:#fff;border-radius:20px 20px 6px 20px;padding:12px 15px;font-size:16px;line-height:1.4;white-space:pre-line}"
+      "css": ".ds-pv{background:#fff;border-radius:28px;padding:22px 22px 26px;max-width:340px;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;color:#0f1b30;box-shadow:0 30px 60px -30px rgba(0,0,0,.32),0 8px 20px -10px rgba(0,0,0,.18)} .ds-pv-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid #e3e8ef} .ds-pv-av{width:46px;height:46px;border-radius:50%;background:#0f1b30;flex:none} .ds-pv-head b{display:block;font-size:16px} .ds-pv-head span span{font-size:14px;color:#46566d} .ds-pv-bubble{margin:22px 0 0 auto;max-width:88%;background:#1462c4;color:#fff;border-radius:20px 20px 6px 20px;padding:12px 15px;font-size:16px;line-height:1.4;white-space:pre-line}"
     }
   ],
   "narrative": {

@@ -5,7 +5,7 @@ colors:
   navy: "#0f1b30"
   navy-2: "#162745"
   navy-3: "#21365c"
-  navy-glow: "#1b3157"
+  navy-glow: "#152644"
   steel: "#dfe6ef"
   steel-2: "#c5d1df"
   steel-ink: "#46566d"
@@ -17,7 +17,6 @@ colors:
   blue-ink: "#0f4fa3"
   spark: "#8cc6ff"
   white: "#ffffff"
-  sms-bubble: "#1f8bff"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
