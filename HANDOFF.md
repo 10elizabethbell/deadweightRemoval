@@ -1,19 +1,23 @@
 # Deadweight Removal — handoff at ~60%
 
-**Live file:** index.html · **Repo:** https://github.com/10elizabethbell/deadweightRemoval · **Built:** 2026-10-08 from Muse brief (Muse run 2026-10-08, Marlton NJ Local Business Group flyer post)
+**Live:** https://10elizabethbell.github.io/deadweightRemoval/ · **Repo:** https://github.com/10elizabethbell/deadweightRemoval · **Built:** 2026-10-08 from Muse brief (Muse run 2026-10-08, Marlton NJ Local Business Group flyer post)
 
 ## What's built
-- **One page, phone first:** top bar (wordmark + tap-to-call number), hero, "What we haul" (6 services), "Photo to gone" (3 steps), the flyer's promises on an electric-blue band, closing section with name + area, footer with "Demo one-pager — free sample."
+- **One page, phone first:** top bar (wordmark + tap-to-call number top right), hero (headline, one promise line, one Text a photo button), "What we haul" (6 services as short names), "Photo to gone" (3 steps), the flyer's promises on an electric-blue band, closing section with name, area, Text button and "See more of our work on Facebook", footer with name, area, number and Facebook.
 - **World:** the client's own logo. Chiseled concrete chunks, snapped steel chains, electric blue, navy night. Navy ground (`#0f1b30`, never black), steel-light services section, blue promise band. System fonts, heavy uppercase display.
 - **Signature element:** a rubble pile along the bottom of the hero and the close, about 230 chunks on phones and 750 on desktop, drawn as shaded solid blocks. The pile's surface rolls, mouse or finger shoves chunks around with a spring wobble, and a tap or upward swipe flings top chunks clear: they lift away, fade into dust, and fresh junk drops back in. The real logo, cut out of its dark square with an alpha matte (`src-assets/logo-cut.png`, not committed), stands *in* the pile: back rows behind it, front rows in front. Blue dust motes rise and dodge the pointer.
 - **Chain seams:** every section boundary is a sagging, rippling steel chain (alternating ring and edge-on links) and the next section's color fills below the moving chain. Pushing it with a finger sends a wave along it. Below both piles the chain lies across the pile's base: the seam's top half is transparent.
-- **Contact:** every action uses 609-852-8552. "Text a photo" opens SMS with a pre-filled quote request (What needs to go / Town / When works / I'll attach a photo). Each service row texts with that service named. Call buttons use `tel:`. A sticky Text/Call dock appears on phones once the hero buttons scroll away, and hides again at the closing buttons. On desktop the buttons show the number, and hovering a service updates a text-message preview card.
+- **Contact:** every action uses 609-852-8552. "Text a photo" opens SMS with a pre-filled quote request (What needs to go / Town / When works / I'll attach a photo). Each service row texts with that service named. Calling is the header's top-right number (`tel:`), plus inline links in step 2 and the footer; no Call buttons and no sticky bar. On desktop the close button shows the number, and hovering a service updates a text-message preview card.
+- **Favicon and home-screen icon** are the strongman and diamond cropped from the logo (`favicon-32.png`, `apple-touch-icon.png`). **Link preview:** `og-image.jpg` (1200×630, logo on navy), with `og:url` pointing at the Pages site.
+- **Hero drag:** on phones the hero pile takes vertical drags too (`touch-action:none` on it, pull-to-refresh off); scroll by swiping the text above it.
 - Tunables are at the top of the `<script>` in `DW` (lanes, sizes, push, kick, chain speed and sag).
 
 ## Assumptions I made
 - **Headline "Drop the dead weight."** is a play on their name, not their wording.
 - **Colors** were sampled from the logo (blue `#2694f1`/`#156ed0`, navy glow `#10192a`). Their real brand colors are unknown.
 - **Service one-liners** ("Couches, tables, dressers", "Washers, dryers, fridges", "Branches, brush, leaves and clippings") are my plain-language examples of their flyer categories. The reviewer cut mattresses and stoves (often surcharged or refused); ask before adding them back.
+- **Hero promise** ("We come when it suits you, treat your home with care, and leave nothing behind but the space you wanted back.") is written about how they treat the customer, built on their "flexible scheduling" and "reliable & professional". The care and clean-exit parts are my wording, not theirs; confirm with the owner.
+- **"We" voice:** crew size is unknown, so the page says "we". Switch to "I" if it's one person.
 - **"Text it for a quote"**: the flyer says "call or text". That they quote from a photo is Muse's inference (a natural fit for junk), not stated by them.
 - **"5% off for cash"** paraphrases the flyer's "5% DISCOUNT CASH". The promise band uses their wording verbatim, with "Reliable & professional" as its first line.
 - **Step 3, "You point, we load it and take it away"**, assumes they do the loading (standard for junk removal, not stated).
@@ -22,10 +26,10 @@
 ## Placeholders and gaps
 - **No work photos or before/afters.** The page leans on the motion and typography instead. Real truck/pile/cleared-basement shots would be the biggest upgrade.
 - **Flyer image not obtained:** it needs a logged-in Facebook browser (the og:image of the group post is the group's Marlton clock cover). So **"FREE ESTIMATES" is not on the page**, as Muse advised. If the flyer confirms it, add it to the perks and the promise band.
-- No hours, no owner name, no email, no reviews, no prices. None of these appear on the page.
-- No `og:image` for link previews (a data URI can't be one). Add a hosted 1200×630 share image once there's a URL.
+- No hours, no owner name, no email, no reviews, no prices. None of these appear on the page. When there's an email, it goes in the footer only.
+- **Facebook link** goes to page ID 61587889134420 from the brief. That page is restricted to logged-out viewers, so I couldn't check that it shows their work. With no work photos on the site, the "see more of our work" link sits in the close, under the Text button.
 - The logo is a 720px Facebook profile image, cut out and embedded at 576px WebP (47KB, most of the 107KB page). Ask for the original file; a vector would be lighter and sharper.
-- At a realistic Facebook in-app height (390×664) the first screen shows the headline, pitch, both buttons and the proof chips; the logo and pile start right at the fold. To pull the logo up you'd have to shrink something above it. Your call.
+- The hero's proof chips (Same day / Insured / 5% off) were cut for a single focal point; the promise band still says all three.
 
 ## Questions for the owner
 - Do you give free estimates? (The flyer OCR read "FREE ESTIMATESE".)
@@ -50,7 +54,7 @@
 - Copy alternatives for the headline: "Your junk. Gone same day." / "We haul the dead weight."
 
 ## Not verified
-- Real-device touch feel (headless touch and mouse sweeps both move the pile and chains; flick-to-break-free not felt on glass).
+- Real-device touch feel (headless touch and mouse sweeps both move the pile and chains; flick-to-break-free not felt on glass). The hero pile blocking scroll on phones is per the finishing rules; check it doesn't feel stuck.
 - The real SMS handoff on iOS and Android, especially from inside Facebook's in-app browser. The `sms:+1…?&body=` form is the cross-platform one, but untested on devices.
 - Frame rate on older phones (~230 chunks + 4 chain seams; everything pauses off screen).
 - Reduced-motion still frame (code path exists, not screenshotted).

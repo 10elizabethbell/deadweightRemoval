@@ -8,6 +8,15 @@
 <meta name="theme-color" content="#0f1b30">
 <meta property="og:title" content="Deadweight Removal · Junk removal in South Jersey">
 <meta property="og:description" content="Same day service. Insured. Call or text 609-852-8552.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://10elizabethbell.github.io/deadweightRemoval/">
+<meta property="og:image" content="https://10elizabethbell.github.io/deadweightRemoval/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deadweight Removal logo: a strongman breaking his chains">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 /* ============ TOKENS ============ */
 :root{
@@ -30,7 +39,7 @@
 
 /* ============ BASE ============ */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scrollbar-color:var(--navy-3) var(--navy)}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scrollbar-color:var(--navy-3) var(--navy)}
 body{margin:0;background:var(--navy);color:var(--chrome);font:400 17px/1.55 var(--font);overflow-x:hidden}
 ::selection{background:var(--blue);color:#fff}
 a{color:inherit}
@@ -69,14 +78,12 @@ p{margin:0}
 .pitch{margin-top:16px;font-size:clamp(17px,4.7vw,20px);line-height:1.45;color:var(--mist);max-width:34ch}
 .pitch strong{color:var(--chrome);font-weight:700}
 .hero .actions{margin-top:22px}
-.perks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:18px 0 0;padding:0;list-style:none;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--chrome)}
-.perks li{display:flex;align-items:center;gap:7px}
-.perks .icon{width:17px;height:17px;color:var(--blue);stroke-width:2.6}
 
 /* the heap: rubble pile with the logo standing in it */
 .heap{position:relative;height:var(--band,300px);--ext:150px;margin-top:14px;
   background:linear-gradient(rgba(26,44,74,0),#1a2c4a)}
 .heap canvas{position:absolute;left:0;bottom:0;width:100%;height:calc(100% + var(--ext));pointer-events:none;display:block}
+.hero .heap{touch-action:none}
 .rubble-back{z-index:0}.heap-logo{z-index:1}.rubble-front{z-index:2}
 .heap-logo{position:absolute;left:50%;bottom:30%;width:min(68vw,260px);aspect-ratio:576/450;transform:translateX(-50%);
   background:var(--logo) center/contain no-repeat}
@@ -95,15 +102,15 @@ p{margin:0}
 .svc-grid{display:grid;gap:28px;margin-top:28px}
 .svc-list{list-style:none;margin:0;padding:0}
 .svc-list li:first-child .svc{border-top:2px solid var(--steel-2)}
-.svc{display:flex;align-items:center;gap:16px;padding:18px 2px;min-height:76px;text-decoration:none;border-bottom:2px solid var(--steel-2);transition:background-color .2s}
+.svc{display:flex;align-items:center;gap:16px;padding:14px 2px;min-height:68px;text-decoration:none;border-bottom:2px solid var(--steel-2);transition:background-color .2s}
 .svc-txt{transition:transform .25s cubic-bezier(.2,.8,.2,1)}
 .svc-txt{flex:1;min-width:0}
 .svc h3{font-size:clamp(1.25rem,5.6vw,1.6rem);line-height:1.05}
-.svc p{margin-top:4px;font-size:16px;color:var(--steel-ink)}
-.go{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--blue-deep);color:#fff;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.go{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--steel-2);color:var(--ink);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .2s,color .2s}
 .go .icon{width:20px;height:20px;stroke-width:2.4}
 .svc:active{background:rgba(20,98,196,.08)}
-@media (hover:hover){.svc:hover{background:rgba(20,98,196,.07)}.svc:hover .svc-txt{transform:translateX(10px)}.svc:hover .go{transform:translateX(4px)}}
+.svc:active .go,.svc:focus-visible .go{background:var(--blue-deep);color:#fff}
+@media (hover:hover){.svc:hover{background:rgba(20,98,196,.07)}.svc:hover .svc-txt{transform:translateX(10px)}.svc:hover .go{transform:translateX(4px);background:var(--blue-deep);color:#fff}}
 .svc-note{margin-top:16px;font-size:16px;color:var(--steel-ink);display:flex;gap:10px;align-items:flex-start}
 .svc-note .icon{color:var(--blue-ink);margin-top:2px}
 
@@ -132,20 +139,17 @@ p{margin:0}
 .close .area{margin-top:16px;font-size:clamp(17px,4.7vw,20px);color:var(--mist);max-width:36ch}
 .close .area strong{color:var(--chrome)}
 .close .actions{margin-top:22px}
+.fb-more{display:inline-flex;align-items:center;gap:10px;min-height:48px;margin-top:14px;font-weight:800;font-size:17px;color:var(--chrome);text-decoration:underline;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:5px}
+.fb-more .icon{color:var(--blue)}
+@media (hover:hover){.fb-more:hover{color:#8cc6ff;text-decoration-color:#8cc6ff}}
 .close .heap{--band:290px}
 
 /* ============ FOOTER ============ */
-footer{background:var(--navy);padding:20px 0 calc(100px + env(safe-area-inset-bottom));color:var(--mist);font-size:15px}
+footer{background:var(--navy);padding:20px 0 calc(32px + env(safe-area-inset-bottom));color:var(--mist);font-size:15px}
 footer .wrap{display:grid;gap:6px}
 footer b{color:var(--chrome);font-weight:900;text-transform:uppercase;letter-spacing:.02em}
-footer a{font-weight:700;color:var(--chrome);font-variant-numeric:tabular-nums;text-underline-offset:3px;text-decoration-color:var(--blue)}
+footer a{font-weight:700;padding:10px 0;margin:-10px 0;color:var(--chrome);font-variant-numeric:tabular-nums;text-underline-offset:3px;text-decoration-color:var(--blue)}
 
-/* ============ PHONE DOCK ============ */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1.4fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(15,27,48,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 -10px 30px -12px rgba(0,0,0,.5);
-  transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.dock.on{transform:none}
-.dock .btn{min-height:58px;font-size:17px}
 
 /* ============ DESKTOP ============ */
 @media (min-width:760px){
@@ -169,7 +173,6 @@ footer a{font-weight:700;color:var(--chrome);font-variant-numeric:tabular-nums;t
   .step-n{font-size:84px}
   .close{padding-top:60px}
   .close .heap{--band:260px}
-  .dock{display:none}
 }
 @media (min-width:1000px){
   .hero{min-height:min(100vh,900px)}
@@ -194,7 +197,7 @@ DIRECTION CONTRACT
 THESIS: Junk removal is the satisfying moment the weight leaves. The page is that moment: a pile of rubble you can shove, flick and send flying, under a strongman who has just snapped his chains.
 OWN-WORLD: The client's own logo: chiseled concrete chunks, snapped steel chains, electric blue burst, distressed chrome lettering, navy night. Chunks are shaded solid blocks; chains are real two-shape links (ring, edge-on bar).
 STORY: Drop the dead weight (hero, pile + logo) → what we haul (each row texts a pre-filled quote request) → three steps from photo to gone → the flyer's promises, loud → name, area, call or text, pile again.
-FIRST VIEWPORT (phone): wordmark + tap-to-call number, benefit headline, one-line pitch naming the services and South Jersey, Text a photo / Call, three proof chips, top of the rubble pile and logo.
+FIRST VIEWPORT (phone): wordmark + tap-to-call number (top right, the only call action), benefit headline, the promise, one Text a photo button, top of the rubble pile and logo.
 FORM: Navy ground (never black), steel-light services section, electric-blue promise band. System sans, heavy uppercase display, sentence-case body. Sagging chain seams between every section; the fill follows the chain.
 -->
 
@@ -207,16 +210,10 @@ FORM: Navy ground (never black), steel-light services section, electric-blue pro
 <section class="hero" id="top">
   <div class="hero-copy">
     <h1>Drop the <em>dead weight.</em></h1>
-    <p class="pitch"><strong>Furniture, appliances, basements, sheds and yard debris,</strong> hauled out. Serving South Jersey &amp; surrounding areas.</p>
+    <p class="pitch">We come when it suits you, <strong>treat your home with care,</strong> and leave nothing behind but the space you wanted back.</p>
     <div class="actions" id="heroActions">
-      <a class="btn btn-primary" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></svg>Text a photo <span class="num">609-852-8552</span></a>
-      <a class="btn btn-secondary" href="tel:+16098528552"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg>Call now</a>
+      <a class="btn btn-primary" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></svg>Text a photo</a>
     </div>
-    <ul class="perks">
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Same day service</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Insured</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>5% off for cash</li>
-    </ul>
   </div>
   <div class="heap" data-heap>
     <div class="heap-glow"></div>
@@ -235,12 +232,12 @@ FORM: Navy ground (never black), steel-light services section, electric-blue pro
     <div class="svc-grid">
       <div>
         <ul class="svc-list">
-          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20furniture%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Furniture removal</h3><p>Couches, tables, dressers.</p></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
-          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20appliance%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Appliance removal</h3><p>Washers, dryers, fridges.</p></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
-          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20a%20basement%20cleanout.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Basement cleanouts</h3><p>Whatever's down there.</p></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
-          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20a%20shed%20cleanout.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Shed cleanouts</h3><p>Whatever's in there.</p></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
-          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20yard%20debris%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Yard debris removal</h3><p>Branches, brush, leaves and clippings.</p></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
-          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Misc. junk removal</h3><p>If it's dead weight, send a picture.</p></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
+          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20furniture%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Furniture removal</h3></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
+          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20appliance%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Appliance removal</h3></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
+          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20a%20basement%20cleanout.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Basement cleanouts</h3></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
+          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20a%20shed%20cleanout.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Shed cleanouts</h3></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
+          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20yard%20debris%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Yard debris removal</h3></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
+          <li><a class="svc" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><span class="svc-txt"><h3>Misc. junk removal</h3></span><span class="go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></svg></span></a></li>
         </ul>
         <p class="svc-note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.7l1.5-2h4.6l1.5 2h1.7A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.5"/></svg><span>Each one opens a text to 609-852-8552 with the job filled in. Add a photo, your town and a day, then send.</span></p>
       </div>
@@ -293,8 +290,8 @@ When works:
     <p class="area">Serving <strong>South Jersey &amp; surrounding areas.</strong> Not sure you're in range? Text your town.</p>
     <div class="actions" id="closeActions">
       <a class="btn btn-primary" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></svg>Text a photo <span class="num">609-852-8552</span></a>
-      <a class="btn btn-secondary" href="tel:+16098528552"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg>Call now</a>
     </div>
+    <a class="fb-more" href="https://www.facebook.com/profile.php?id=61587889134420"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9a.5.5 0 0 1 .5-.5z"/></svg>See more of our work on Facebook</a>
   </div>
   <div class="heap" data-heap>
     <div class="heap-glow"></div>
@@ -311,14 +308,10 @@ When works:
   <div class="wrap">
     <b>Deadweight Removal</b>
     <span>Junk removal · South Jersey &amp; surrounding areas · Call or text <a href="tel:+16098528552">609-852-8552</a></span>
-    <span>Demo one-pager — free sample.</span>
+    <a class="fb" href="https://www.facebook.com/profile.php?id=61587889134420">Deadweight Removal on Facebook</a>
   </div>
 </footer>
 
-<nav class="dock" id="dock" aria-label="Contact Deadweight Removal">
-  <a class="btn btn-primary" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29" tabindex="-1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></svg>Text a photo</a>
-  <a class="btn btn-secondary" href="tel:+16098528552" tabindex="-1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg>Call</a>
-</nav>
 
 <script>
 /* ============ TUNABLES (Ellie: tweak here) ============ */
@@ -589,16 +582,6 @@ var DW = {
   window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ if (innerWidth === lastW && phone()) return; lastW = innerWidth; parts.forEach(function(p){ p.resize(); }); }, 150); });
 })();
 
-/* ============ PHONE DOCK: shows once the hero buttons scroll away ============ */
-(function(){
-  var dock = document.getElementById('dock'), seen = {};
-  if (!('IntersectionObserver' in window)) { dock.classList.add('on'); return; }
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ seen[e.target.id] = e.isIntersecting; });
-    dock.classList.toggle('on', !seen.heroActions && !seen.closeActions);
-  });
-  io.observe(document.getElementById('heroActions')); io.observe(document.getElementById('closeActions'));
-})();
 
 /* ============ DESKTOP TEXT PREVIEW: hover a service to see its text ============ */
 (function(){

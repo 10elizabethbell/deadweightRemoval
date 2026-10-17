@@ -51,11 +51,6 @@ typography:
     fontSize: "clamp(17px, 4.7vw, 20px)"
     fontWeight: 400
     lineHeight: 1.45
-  label:
-    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
-    fontSize: "13.5px"
-    fontWeight: 800
-    letterSpacing: "0.06em"
   display-desk:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"
     fontSize: "clamp(4rem, 5.5vw, 5.4rem)"
@@ -159,7 +154,7 @@ Everything lives in one file: `index.html`. Colors and the radius are CSS custom
 
 The page is built from the client's own logo: a chrome strongman snapping steel chains over a pile of concrete chunks, electric blue light, navy night. The logo's materials are the page's materials. Rubble piles (canvas) sit at the top and bottom of the page with the cut-out logo standing in them. Sagging steel chains (canvas) join every section. Between them, the copy is flyer-loud: heavy uppercase headings, plain sentence-case body, the phone number everywhere.
 
-It is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. A sticky Text/Call dock covers the space between the hero and closing buttons on phones. Motion is physical. Pointer and touch shove the pile and the chains, and a tap flicks a chunk away. All of it stops under reduced-motion.
+It is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. Calling is the tap-to-call number in the header's top-right corner; there is no Call button and no sticky bar. Motion is physical. Pointer and touch shove the pile and the chains, and a tap flicks a chunk away. All of it stops under reduced-motion.
 
 **Key Characteristics:**
 - Navy night ground, one steel-light section, one electric-blue band. That three-tone sequence is the page rhythm.
@@ -174,7 +169,7 @@ Navy dominates, steel lightens, electric blue does the work. All values come fro
 
 ### Primary
 - **Removal Blue** (`blue`): taken from the logo's "REMOVAL" lettering. Used for the accent words in headings ("dead weight.", "Removal"), step numerals, icons on navy, focus rings, button borders and the wordmark's REMOVAL line.
-- **Deep Blue** (`blue-deep`): fill for primary buttons, the service arrow discs and the whole promise band. Use it where white text has to sit on blue. `blue-hover` is its hover state only.
+- **Deep Blue** (`blue-deep`): fill for primary buttons, the service arrow discs on hover and the whole promise band. Use it where white text has to sit on blue. `blue-hover` is its hover state only.
 - **Blue Ink** (`blue-ink`): blue for icons on the steel section, where Removal Blue is too light.
 - **Spark** (`spark`): pale blue for the chain-link icons in the promise band and the rising dust motes in the heaps.
 
@@ -205,7 +200,6 @@ Navy dominates, steel lightens, electric blue does the work. All values come fro
 - **Step numeral** (900, Removal Blue, 58px phone / 84px desktop, tabular).
 - **Lead** (400, `clamp(17px, 4.7vw, 20px)`, Mist, max 34–36ch): the hero pitch and close area line. Key phrases are set in `<strong>` (700, Chrome).
 - **Body** (400, 17px/1.55): sentence case, max ~44ch. Service blurbs and notes are 16px.
-- **Label** (800, 13.5px, uppercase, 0.06em): the three proof chips under the hero buttons.
 
 ### Named Rules
 **The Loud/Plain Rule.** Headings are uppercase weight 900. Body text is always sentence case. Never set a paragraph in caps, and never set a heading in mixed case.
@@ -215,14 +209,14 @@ Navy dominates, steel lightens, electric blue does the work. All values come fro
 ## Layout
 
 - **Container:** max 1180px, with 20px gutters on phones and 32px from 760px up.
-- **Breakpoints:** `<760px` is phone (the dock shows, buttons stack full width, the services preview is hidden). `≥760px`: buttons sit side by side (min 250px) and show the number, services become a 1.15fr/0.85fr grid with the sticky text preview, steps go to three columns, seams grow to 92px. The promise claims stay a single stacked column at every width, like the flyer (a two-column grid clipped at 1440px and was removed). `≥1000px`: the hero fills `min(100vh, 900px)`, and the heaps go absolute at the section bottom with the logo pinned right.
+- **Breakpoints:** `<760px` is phone (buttons stack full width, the services preview is hidden). `≥760px`: buttons sit side by side (min 250px), the close button shows the number, services become a 1.15fr/0.85fr grid with the sticky text preview, steps go to three columns, seams grow to 92px. The promise claims stay a single stacked column at every width, like the flyer (a two-column grid clipped at 1440px and was removed). `≥1000px`: the hero fills `min(100vh, 900px)`, and the heaps go absolute at the section bottom with the logo pinned right.
 - **Section rhythm:** 34px top padding everywhere, 52–60px bottom. Button groups and grids use 12px gaps.
-- **Phone first viewport:** wordmark + tap-to-call, h1, pitch, Text/Call, proof chips, then the top of the heap. Keep all of it on one screen.
-- **Footer** reserves `100px + safe-area` at the bottom so the dock never covers it.
+- **Phone first viewport:** wordmark + top-right tap-to-call number (the only number on that screen), h1, pitch, one Text a photo button, then the logo standing in the heap. Keep all of it on one screen and keep the headline the single focal point.
+- **Footer:** name, area, the phone number and the Facebook link, with `32px + safe-area` bottom padding. An email goes here, and only here, once the owner supplies one.
 
 ## Elevation & Depth
 
-Depth comes from light, not from cards. Navy grounds glow from the bottom (radial `navy-glow`), and a blue radial glow (`rgba(38,148,241,.32)`) sits behind each logo. Real shadows exist in only three places, all soft and navy-tinted: the primary button (`0 10px 22px -10px rgba(3,8,20,.7)`, deeper on hover), the dock (`0 -10px 30px -12px rgba(0,0,0,.5)` with a 10px backdrop blur) and the desktop text-preview card. Rubble chunks and chain links bake their own drop shadows into their canvas sprites.
+Depth comes from light, not from cards. Navy grounds glow from the bottom (radial `navy-glow`), and a blue radial glow (`rgba(38,148,241,.32)`) sits behind each logo. Real shadows exist in only two places, all soft and navy-tinted: the primary button (`0 10px 22px -10px rgba(3,8,20,.7)`, deeper on hover), and the desktop text-preview card. Rubble chunks and chain links bake their own drop shadows into their canvas sprites.
 
 **The Glow-Not-Lift Rule.** To add emphasis on navy, add blue light behind the element. Don't stack shadowed cards.
 
@@ -236,18 +230,18 @@ Controls have a firm 14px radius (`--r`). Circular forms are kept for the 44px s
 One component everywhere (`.btn`), tactile and confident.
 - **Shape:** 14px radius, 2px Removal Blue border, min-height 58px, 18px/800 label with a 22px stroke icon.
 - **Primary (Text a photo):** Deep Blue fill, white text, soft navy shadow. Always an `sms:` link with the pre-filled body.
-- **Secondary (Call now):** translucent navy fill, Chrome text, same border. Always a `tel:` link.
+- **Secondary:** translucent navy fill, Chrome text, same border (outlined, not filled). Not used now: calling lives in the header number, never as a button under the hero title.
 - **States:** press scales to 0.97. Hover (pointer devices only) lifts 2px, and primary goes to `blue-hover`. Easing is `cubic-bezier(.2,.8,.2,1)` at .25s.
-- **Desktop:** the number (`.num`) appears inside the button.
+- **Desktop:** the number (`.num`) appears inside the close button only; the hero button never repeats the header's number.
 
 ### Service rows
-Each row is a full-width `sms:` link (min 76px tall) with a title, a one-line blurb and a Deep Blue arrow disc. Rows have 2px Steel Rule dividers. On hover the text slides 10px and the disc 4px, with a faint blue wash (`rgba(20,98,196,.07)`). The pre-filled body follows one template: "Hi Deadweight Removal! I'd like a quote for {service}. / What needs to go: / Town: / When works: / (I'll attach a photo.)" A new service gets the same template.
+Each row is a full-width `sms:` link (min 68px tall) with a short service name (no blurb) and an arrow disc that is Steel Rule grey by default and turns Deep Blue only on hover, focus or press. Rows have 2px Steel Rule dividers. On hover the text slides 10px and the disc 4px, with a faint blue wash (`rgba(20,98,196,.07)`). The pre-filled body follows one template: "Hi Deadweight Removal! I'd like a quote for {service}. / What needs to go: / Town: / When works: / (I'll attach a photo.)" A new service gets the same template.
 
 ### Text preview (desktop only)
 A sticky white phone-sheet card beside the service list. Hover or focus on a row puts that row's decoded `sms` body into the blue bubble.
 
-### Phone dock
-Fixed bottom bar on phones (1.4fr Text / 1fr Call, 58px buttons, 92% navy with blur). It slides in (.35s) only while both the hero and close button groups are off screen, and it is hidden ≥760px.
+### Facebook link
+`.fb-more` under the close's Text button: bold Chrome text, Facebook icon, 2px blue underline, 48px tall, light blue on hover. It's where visitors look for proof of the work; the footer repeats it.
 
 ### Rubble heap (signature)
 The stack, back to front: blue glow, back canvas (`rubble-back`), cut-out logo (`--logo`, a data-URI PNG), front canvas (`rubble-front`). The logo stands *in* the pile because chunks draw on both sides of it. The chunks are faceted polygons in a steel/navy HSL palette with a few blue chunks (the `PALETTE` array in the script: `[hue, sat, light, weight]`). Band height is `--band` (300px hero phone, 290/260/240px close by breakpoint). `--ext` is how far the canvas reaches above the band.
@@ -264,13 +258,14 @@ A `.seam` div between every pair of sections, with `--from` (the color above) an
 ## Do's and Don'ts
 
 ### Do:
-- **Do** make every new call to action a `.btn-primary` (`sms:` with the quote template) or a `.btn-secondary` (`tel:`), at 58px.
+- **Do** make every new call to action a `.btn-primary` (`sms:` with the quote template), at 58px. At most two buttons in a group, never two controls doing the same thing on one screen, and the phone number once per screen.
 - **Do** put a chain seam between any two sections and set its `--from`/`--to` to the exact grounds.
 - **Do** keep the ground sequence to navy, steel and deep blue, and use Removal Blue for the one accent word in a heading.
 - **Do** use stroke SVG icons (2px, round caps) at 17–22px, colored with `currentColor`.
 - **Do** honor `prefers-reduced-motion`: the canvases render one still frame and all transitions are off.
 
 ### Don't:
+- **Don't** add a sticky bottom bar, demo or sample wording, email links outside the footer, or pills for things that aren't buttons.
 - **Don't** use pure black, or grey-neutral shadows on navy.
 - **Don't** load a webfont. The system stack is the owner's house style.
 - **Don't** add invented facts (prices, reviews, years, towns) to fill a component.

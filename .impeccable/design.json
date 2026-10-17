@@ -255,10 +255,6 @@
         "displayName": "Lead",
         "purpose": "Hero pitch and close area line, Mist with Chrome strong."
       },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Proof chips."
-      },
       "display-desk": {
         "displayName": "Display Desk",
         "purpose": "Hero h1 clamp at 1000px and up."
@@ -312,11 +308,6 @@
         "purpose": "Primary button hover lift."
       },
       {
-        "name": "dock",
-        "value": "0 -10px 30px -12px rgba(0,0,0,.5)",
-        "purpose": "Phone dock, with backdrop-filter blur(10px)."
-      },
-      {
         "name": "preview-card",
         "value": "0 30px 60px -30px rgba(0,0,0,.32), 0 8px 20px -10px rgba(0,0,0,.18)",
         "purpose": "Desktop text preview card."
@@ -331,7 +322,7 @@
       {
         "name": "ease-out-snap",
         "value": "cubic-bezier(.2,.8,.2,1)",
-        "purpose": "All UI transitions (buttons .25s, service rows .25-.3s, dock .35s)."
+        "purpose": "All UI transitions (buttons .25s, service rows .25-.3s)."
       },
       {
         "name": "press",
@@ -375,18 +366,10 @@
       "css": ".ds-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 22px;border-radius:14px;border:2px solid #2694f1;font:800 18px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .2s,box-shadow .25s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid #2694f1;outline-offset:3px} .ds-btn-primary{background:#1462c4;color:#fff;box-shadow:0 10px 22px -10px rgba(3,8,20,.7)} .ds-btn-primary:hover{background:#1a70d8;transform:translateY(-2px);box-shadow:0 16px 28px -12px rgba(3,8,20,.75)}"
     },
     {
-      "name": "Secondary Button (Call now)",
-      "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Call action beside the primary; always a tel: link.",
-      "html": "<div style=\"background:#0f1b30;padding:20px\"><a class=\"ds-btn ds-btn-secondary\" href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z\"/></svg>Call now</a></div>",
-      "css": ".ds-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 22px;border-radius:14px;border:2px solid #2694f1;font:800 18px/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .2s,box-shadow .25s} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid #2694f1;outline-offset:3px} .ds-btn-secondary{background:rgba(15,27,48,.55);color:#eef3f9} .ds-btn-secondary:hover{background:#162745;transform:translateY(-2px)}"
-    },
-    {
       "name": "Service Row",
       "kind": "custom",
       "refersTo": "service-row",
-      "description": "Full-width sms: link per service on the steel section, with arrow disc.",
+      "description": "Full-width sms: link per service on the steel section, with an arrow disc that turns blue on hover.",
       "html": "<div style=\"background:#dfe6ef;padding:20px\"><a class=\"ds-svc\" href=\"#\"><span class=\"ds-svc-txt\"><b>Furniture removal</b><span>Couches, tables, dressers.</span></span><span class=\"ds-go\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a></div>",
       "css": ".ds-svc{display:flex;align-items:center;gap:16px;padding:18px 2px;min-height:76px;text-decoration:none;color:#0f1b30;border-top:2px solid #c5d1df;border-bottom:2px solid #c5d1df;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;transition:background-color .2s} .ds-svc-txt{flex:1;transition:transform .25s cubic-bezier(.2,.8,.2,1)} .ds-svc-txt b{display:block;font-weight:900;text-transform:uppercase;font-size:1.5rem;line-height:1.05} .ds-svc-txt span{display:block;margin-top:4px;font-size:16px;color:#46566d} .ds-go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#1462c4;color:#fff;transition:transform .3s cubic-bezier(.2,.8,.2,1)} .ds-svc:hover{background:rgba(20,98,196,.07)} .ds-svc:hover .ds-svc-txt{transform:translateX(10px)} .ds-svc:hover .ds-go{transform:translateX(4px)} .ds-svc:focus-visible{outline:3px solid #2694f1;outline-offset:3px}"
     },
@@ -397,14 +380,6 @@
       "description": "Wordmark (DEADWEIGHT / spaced blue REMOVAL) and tap-to-call number.",
       "html": "<header class=\"ds-top\"><a class=\"ds-mark\" href=\"#\"><b>DEADWEIGHT</b><span>REMOVAL</span></a><a class=\"ds-call\" href=\"#\"><span style=\"color:#2694f1;display:flex\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.4 20.1 3.9 13.6 3.4 5.2A1.6 1.6 0 0 1 5 3.5z\"/></svg></span>609-852-8552</a></header>",
       "css": ".ds-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:#0f1b30;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-mark{display:flex;flex-direction:column;text-decoration:none;line-height:1} .ds-mark b{font-weight:900;font-size:21px;letter-spacing:.01em;color:#eef3f9} .ds-mark span{font-weight:800;font-size:11.5px;letter-spacing:.32em;color:#2694f1;margin-top:3px} .ds-call{display:flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-weight:800;font-size:15px;color:#eef3f9;font-variant-numeric:tabular-nums} .ds-call:hover{color:#fff} .ds-call:focus-visible{outline:3px solid #2694f1;outline-offset:3px}"
-    },
-    {
-      "name": "Proof Chips",
-      "kind": "chip",
-      "refersTo": "",
-      "description": "Three flyer facts under the hero buttons.",
-      "html": "<ul class=\"ds-perks\"><li><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#2694f1\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>Same day service</li><li><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#2694f1\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>Insured</li><li><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#2694f1\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>5% off for cash</li></ul>",
-      "css": ".ds-perks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:16px;list-style:none;background:#0f1b30;font:800 13.5px/1.2 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#eef3f9} .ds-perks li{display:flex;align-items:center;gap:7px}"
     },
     {
       "name": "Promise Band",
@@ -425,7 +400,7 @@
   ],
   "narrative": {
     "northStar": "The Chains Come Off",
-    "overview": "The page is built from the client's own logo: a chrome strongman snapping steel chains over a pile of concrete chunks, electric blue light, navy night. The logo's materials are the page's materials. Rubble piles (canvas) sit at the top and bottom of the page with the cut-out logo standing in them. Sagging steel chains (canvas) join every section. Between them, the copy is flyer-loud: heavy uppercase headings, plain sentence-case body, the phone number everywhere.\n\nIt is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. A sticky Text/Call dock covers the space between the hero and closing buttons on phones. Motion is physical. Pointer and touch shove the pile and the chains, and a tap flicks a chunk away. All of it stops under reduced-motion.",
+    "overview": "The page is built from the client's own logo: a chrome strongman snapping steel chains over a pile of concrete chunks, electric blue light, navy night. The logo's materials are the page's materials. Rubble piles (canvas) sit at the top and bottom of the page with the cut-out logo standing in them. Sagging steel chains (canvas) join every section. Between them, the copy is flyer-loud: heavy uppercase headings, plain sentence-case body, the phone number everywhere.\n\nIt is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. Calling is the tap-to-call number in the header's top-right corner; there is no Call button and no sticky bar. Motion is physical. Pointer and touch shove the pile and the chains, and a tap flicks a chunk away. All of it stops under reduced-motion.",
     "keyCharacteristics": [
       "Navy night ground, one steel-light section, one electric-blue band. That three-tone sequence is the page rhythm.",
       "Heavy uppercase system sans for display, sentence case for body.",
