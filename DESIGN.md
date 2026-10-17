@@ -156,14 +156,14 @@ Everything lives in one file: `index.html`. Colors and the radius are CSS custom
 
 **Creative North Star: "The Chains Come Off"**
 
-The page is built from the client's own logo: a chrome strongman snapping steel chains over a pile of concrete chunks, electric blue light, navy night. The logo's materials are the page's materials. Rubble piles (canvas) sit at the top and bottom of the page with the cut-out logo standing in them. Sagging steel chains (canvas) join every section. Between them, the copy is flyer-loud: heavy uppercase headings, plain sentence-case body, the phone number everywhere.
+The page is built from the client's own logo: a chrome strongman snapping steel chains over a pile of concrete chunks, electric blue light, navy night. The logo's materials are the page's materials. Junk piles (canvas) sit at the top and bottom of the page with the cut-out logo standing in them. In the hero, a worker carries junk from the pile to their black dump trailer (logo on its side, red-and-white tape) behind a pickup. Sagging steel chains (canvas) join every section. Between them, the copy is flyer-loud: heavy uppercase headings, plain sentence-case body, the phone number everywhere.
 
-It is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. Calling is the tap-to-call number in the header's top-right corner; there is no Call button and no sticky bar. Motion is physical. Pointer and touch shove the pile and the chains, and a tap flicks a chunk away. All of it stops under reduced-motion.
+It is phone-first and built to be acted on. Every primary action is a full-width 58px button. Every service row opens a pre-filled text message. Calling is the tap-to-call number in the header's top-right corner; there is no Call button and no sticky bar. Motion is physical. Pointer and touch shove the pile, the trailer's load and the chains; a tap flicks junk up, and a hard shove knocks it out of the trailer for the worker to fetch. All of it stops under reduced-motion.
 
 **Key Characteristics:**
 - Navy night ground, one steel-light section, one electric-blue band. That three-tone sequence is the page rhythm.
 - Heavy uppercase system sans for display, sentence case for body.
-- Two canvas signatures: the rubble heap with the logo and chain seams whose fill follows the chain.
+- Two canvas signatures: the junk heap (with the logo, and in the hero the truck, trailer and worker) and chain seams whose fill follows the chain.
 - One button component, two variants, used everywhere.
 - Real facts only. The phone number is the only call to action.
 
@@ -221,7 +221,7 @@ Navy dominates, steel lightens, electric blue does the work. All values come fro
 
 ## Elevation & Depth
 
-Depth comes from light, not from cards. Navy grounds glow from the bottom (radial `navy-glow`), and a blue radial glow (`rgba(38,148,241,.32)`) sits behind each logo. Real shadows exist in only two places, all soft and navy-tinted: the primary button (`0 10px 22px -10px rgba(3,8,20,.7)`, deeper on hover), and the desktop text-preview card. Rubble chunks and chain links bake their own drop shadows into their canvas sprites.
+Depth comes from light, not from cards. Navy grounds glow from the bottom (radial `navy-glow`), and a blue radial glow (`rgba(38,148,241,.32)`) sits behind each logo. Real shadows exist in only two places, all soft and navy-tinted: the primary button (`0 10px 22px -10px rgba(3,8,20,.7)`, deeper on hover), and the desktop text-preview card. Junk sprites and chain links bake their own drop shadows into their canvas sprites.
 
 **The Glow-Not-Lift Rule.** To add emphasis on navy, add blue light behind the element. Don't stack shadowed cards.
 
@@ -245,18 +245,24 @@ Each row is a full-width `sms:` link (min 68px tall) with a short service name (
 ### Text preview (desktop only)
 A sticky white phone-sheet card beside the service list. Hover or focus on a row puts that row's decoded `sms` body into the blue bubble.
 
-### Facebook link
-`.fb-more` under the close's Text button: bold Chrome text, Facebook icon, 2px blue underline, 48px tall, light blue on hover. It's where visitors look for proof of the work; the footer repeats it.
+### Before & after
+Right under the hero, on navy: two 4:5 photo sliders in a steel-gradient frame (6px, 20px radius). The before image is clipped by `--x`; the divider is a plain 3px Removal Blue line with a 44px Deep Blue knob. Mouse drags; on touch it moves only once a drag is clearly sideways (8px), so the page still scrolls; a hidden range input gives arrow keys. Before/After labels are plain white text with a shadow, not pills. No intro sentence, no captions.
 
-### Rubble heap (signature)
-The stack, back to front: blue glow, back canvas (`rubble-back`), cut-out logo (`--logo`, a data-URI PNG), front canvas (`rubble-front`). The logo stands *in* the pile because chunks draw on both sides of it. The chunks are faceted polygons in a steel/navy HSL palette with a few blue chunks (the `PALETTE` array in the script: `[hue, sat, light, weight]`). Band height is `--band` (300px hero phone, 290/260/240px close by breakpoint). `--ext` is how far the canvas reaches above the band.
+### Facebook button
+`.btn-fb` under the photos: the button shape on raised navy, "See our Facebook for more of our work". The footer repeats the link.
+
+### Junk heap (signature)
+The stack, back to front: blue glow, back canvas (`rubble-back`), cut-out logo (`--logo`, a data-URI PNG), front canvas (`rubble-front`). The logo stands *in* the pile because junk draws on both sides of it. The junk is drawn in code (`DRAW` in the script): boxes, trash bags, tires, chairs, couches, mattresses, pallets, blue bins, TVs, buckets, branches, washers. Back rows are dimmed toward navy. Band height is `--band` (262px hero phone, 290/260/240px close by breakpoint). `--ext` is how far the canvas reaches above the band.
+
+The hero heap has `data-crew`: the left of the band is open ground with a pickup and their dump trailer (logo decal, red/white tape). A worker in a Removal Blue shirt fetches junk from the pile edge (or junk knocked onto the ground, first), carries it overhead and tosses it in. When the load is full the truck drives off and backs in empty. On phones the logo sits right and the trailer left, with the truck's cab off screen.
 
 ### Chain seams (signature)
 A `.seam` div between every pair of sections, with `--from` (the color above) and `--to` (the color below) set inline. The canvas paints `from`, then fills `to` below the live chain curve, so the color boundary is always exactly the chain. Links alternate ring and edge-on bar with a steel gradient (`#e6edf5 → #9fb0c5 → #4b5c74`). Seams after the hero and close use `--from: transparent` and a -44px overlap so they sit over the pile's foot. **Adding a section:** add a seam on each side whose `--from`/`--to` match the neighboring grounds.
 
 ### Tuning (`DW` object, top of `<script>`)
-- **Pile:** `rubble.lanesPhone/lanesDesk` (rows of chunks), `sizePhone/sizeDesk` (chunk size), `surface` (pile top as a share of the band), `roll` (surface speed), `dustPhone/dustDesk` (motes).
-- **Interaction:** `pushRadius/push/carry` (shove), `kick` (tap flick), `spring/damping` (spring-back and wobble), `flyTime` (how fast a flicked chunk vanishes).
+- **Pile:** `junk.lanesPhone/lanesDesk` (rows of junk), `sizePhone/sizeDesk` (junk size), `surface` (pile top as a share of the band), `roll` (surface speed), `dustPhone/dustDesk` (motes).
+- **Interaction:** `pushRadius/push/carry` (shove), `kick` (tap flick), `spring/damping` (spring-back and wobble), `gravity` (how fast flung junk falls back).
+- **Crew:** `crew.scalePhone/scaleDesk` (truck and trailer size), `person` (worker size), `walk` (speed), `gap` (ground between trailer and pile), `loadPhone/loadDesk` (pieces before the haul), `away` (seconds the truck is gone).
 - **Chains:** `chain.linkPhone/linkDesk` (link size in px), `sag/swell/ripple` (wave shape), `speed` (wave speed, currently 2.0 because Ellie likes it lively), `tension` and the push/spring values for touch response.
 - **Sizes and colors:** logo and glow sizes are in the HERO and CLOSE CSS media blocks. Colors are in `:root`, and the seam colors are the inline `--from`/`--to` on each `.seam`. Those are hard-coded hex, so if a ground color changes, update the seams too.
 

@@ -87,6 +87,9 @@ p{margin:0}
 .rubble-back{z-index:0}.heap-logo{z-index:1}.rubble-front{z-index:2}
 .heap-logo{position:absolute;left:50%;bottom:30%;width:min(68vw,260px);aspect-ratio:576/450;transform:translateX(-50%);
   background:var(--logo) center/contain no-repeat}
+.hero .heap{--band:262px}
+.hero .heap-logo{left:auto;right:2px;transform:none;width:min(54vw,214px);bottom:34%}
+.hero .heap-glow{left:auto;right:-60px;transform:none;width:min(90vw,380px)}
 .heap-glow{position:absolute;left:50%;bottom:22%;width:min(110vw,520px);aspect-ratio:1.6;transform:translateX(-50%);z-index:0;pointer-events:none;
   background:radial-gradient(closest-side,rgba(38,148,241,.32),rgba(38,148,241,0))}
 
@@ -127,23 +130,23 @@ p{margin:0}
 .step a{color:var(--chrome);font-weight:700;text-underline-offset:3px;text-decoration-color:var(--blue);padding:10px 2px;margin:-10px -2px}
 
 /* ============ BEFORE & AFTER ============ */
-.work{background:var(--steel);color:var(--ink);padding:34px 0 56px}
+.work{background:var(--navy);padding:34px 0 56px}
 .work h2{font-size:clamp(2.1rem,9vw,4rem)}
 .work-grid{display:grid;gap:22px;margin-top:26px}
-.ba,.shot{position:relative;margin:0;aspect-ratio:4/5;border-radius:20px;padding:6px;overflow:hidden;
-  background:linear-gradient(160deg,#e6edf5,#9fb0c5 45%,#4b5c74);box-shadow:0 22px 40px -24px rgba(15,27,48,.55)}
-.ba img,.shot img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.ba{position:relative;margin:0;aspect-ratio:4/5;border-radius:20px;padding:6px;overflow:hidden;
+  background:linear-gradient(160deg,#e6edf5,#9fb0c5 45%,#4b5c74);box-shadow:0 22px 40px -22px rgba(3,8,20,.7)}
+.ba img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .ba>img,.ba-before{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
 .ba-before{clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
 .ba{--x:50%;touch-action:pan-y;user-select:none;-webkit-tap-highlight-color:transparent;cursor:ew-resize}
 .ba-line{position:absolute;top:6px;bottom:6px;left:calc(6px + (100% - 12px) * var(--p,.5));width:3px;margin-left:-1.5px;background:var(--blue);pointer-events:none}
-.ba-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--blue-deep);color:#fff;display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(3,8,20,.6)}
+.ba-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--blue-deep);color:#fff;display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(3,8,20,.7)}
 .ba-knob .icon{width:20px;height:20px;stroke-width:2.4}
-.ba-tag{position:absolute;top:16px;font-weight:900;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px rgba(3,8,20,.85),0 0 12px rgba(3,8,20,.6);pointer-events:none}
+.ba-tag{position:absolute;top:16px;font-weight:900;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px rgba(3,8,20,.7),0 0 12px rgba(3,8,20,.7);pointer-events:none}
 .ba-tag-b{left:18px}.ba-tag-a{right:18px}
 .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
 .ba:has(.ba-range:focus-visible){outline:3px solid var(--blue);outline-offset:3px}
-.btn-fb{margin-top:26px;font-size:16px;padding:0 16px;gap:8px;background:var(--navy);color:var(--chrome);box-shadow:0 10px 22px -12px rgba(3,8,20,.6)}
+.btn-fb{margin-top:26px;font-size:16px;padding:0 16px;gap:8px;background:var(--navy-2);color:var(--chrome)}
 .btn-fb .icon{color:#8cc6ff}
 @media (hover:hover){.btn-fb:hover{background:var(--navy-3);transform:translateY(-2px)}}
 
@@ -187,7 +190,7 @@ footer a{font-weight:700;padding:10px 0;margin:-10px 0;color:var(--chrome);font-
   .pv-cap{margin-top:16px;font-size:14px;color:var(--steel-ink);text-align:center}
   .svc-note{display:none}
   .steps{grid-template-columns:repeat(3,1fr);gap:40px}
-  .work-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+  .work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;max-width:900px}
   .btn-fb{display:inline-flex;font-size:18px;padding:0 22px}
   .step{grid-template-columns:1fr;gap:14px}
   .step-n{font-size:84px}
@@ -195,7 +198,7 @@ footer a{font-weight:700;padding:10px 0;margin:-10px 0;color:var(--chrome);font-
   .close .heap{--band:260px}
 }
 @media (min-width:1000px){
-  .hero{min-height:min(100vh,900px)}
+  .hero{min-height:min(calc(100svh - 80px),860px)}
   .hero-copy{padding-top:56px;padding-right:500px}
   .hero h1{font-size:clamp(4rem,5.5vw,5.4rem)}
   .hero .heap{position:absolute;left:0;right:0;bottom:0;margin:0;--band:280px;--ext:260px}
@@ -216,7 +219,7 @@ footer a{font-weight:700;padding:10px 0;margin:-10px 0;color:var(--chrome);font-
 DIRECTION CONTRACT
 THESIS: Junk removal is the satisfying moment the weight leaves. The page is that moment: a pile of rubble you can shove, flick and send flying, under a strongman who has just snapped his chains.
 OWN-WORLD: The client's own logo: chiseled concrete chunks, snapped steel chains, electric blue burst, distressed chrome lettering, navy night. Chunks are shaded solid blocks; chains are real two-shape links (ring, edge-on bar).
-STORY: Drop the dead weight (hero, pile + logo) → what we haul (each row texts a pre-filled quote request) → three steps from photo to gone → before & after of real cleanouts, then their Facebook → the flyer's promises, loud → name, area, call or text, pile again.
+STORY: Drop the dead weight (hero, junk pile, worker loading the trailer) → before & after of real cleanouts, then their Facebook → what we haul (each row texts a pre-filled quote request) → three steps from photo to gone → the flyer's promises, loud → name, area, call or text, pile again.
 FIRST VIEWPORT (phone): wordmark + tap-to-call number (top right, the only call action), benefit headline, the promise, one Text a photo button, top of the rubble pile and logo.
 FORM: Navy ground (never black), steel-light services section, electric-blue promise band. System sans, heavy uppercase display, sentence-case body. Sagging chain seams between every section; the fill follows the chain.
 -->
@@ -235,7 +238,7 @@ FORM: Navy ground (never black), steel-light services section, electric-blue pro
       <a class="btn btn-primary" href="sms:+16098528552?&amp;body=Hi%20Deadweight%20Removal%21%20I%27d%20like%20a%20quote%20for%20junk%20removal.%0AWhat%20needs%20to%20go%3A%20%0ATown%3A%20%0AWhen%20works%3A%20%0A%28I%27ll%20attach%20a%20photo.%29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M8.5 9.5h7M8.5 12.5h4"/></svg>Text a photo</a>
     </div>
   </div>
-  <div class="heap" data-heap>
+  <div class="heap" data-heap data-crew>
     <div class="heap-glow"></div>
     <canvas class="rubble-back" aria-hidden="true"></canvas>
     <div class="heap-logo" role="img" aria-label="Deadweight Removal logo: a strongman breaking his chains"></div>
@@ -243,7 +246,32 @@ FORM: Navy ground (never black), steel-light services section, electric-blue pro
   </div>
 </section>
 
-<div class="seam" data-seam style="--from:transparent;--to:#dfe6ef"><canvas aria-hidden="true"></canvas></div>
+<div class="seam" data-seam style="--from:transparent;--to:#0f1b30"><canvas aria-hidden="true"></canvas></div>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <h2>Before &amp; after</h2>
+    <div class="work-grid">
+      <figure class="ba" data-ba>
+        <img src="img/garage-after.webp" width="800" height="1000" loading="lazy" decoding="async" alt="After: the same garage cleared down to the concrete floor" draggable="false">
+        <div class="ba-before"><img src="img/garage-before.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Before: a one-car garage packed wall to wall with boxes, bags, a grill and a pressure washer" draggable="false"></div>
+        <span class="ba-tag ba-tag-b" aria-hidden="true">Before</span><span class="ba-tag ba-tag-a" aria-hidden="true">After</span>
+        <div class="ba-line" aria-hidden="true"><span class="ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after: slide to compare">
+      </figure>
+      <figure class="ba" data-ba>
+        <img src="img/corner-after.webp" width="800" height="1000" loading="lazy" decoding="async" alt="After: the same corner cleared, with the shelves left in place" draggable="false">
+        <div class="ba-before"><img src="img/corner-before.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Before: the back corner of a garage stacked with bins, a dresser, a heater and a carpet cleaner" draggable="false"></div>
+        <span class="ba-tag ba-tag-b" aria-hidden="true">Before</span><span class="ba-tag ba-tag-a" aria-hidden="true">After</span>
+        <div class="ba-line" aria-hidden="true"><span class="ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after: slide to compare">
+      </figure>
+    </div>
+    <a class="btn btn-fb" href="https://www.facebook.com/profile.php?id=61587889134420"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9a.5.5 0 0 1 .5-.5z"/></svg>See our Facebook for more of our work</a>
+  </div>
+</section>
+
+<div class="seam" data-seam style="--from:#0f1b30;--to:#dfe6ef"><canvas aria-hidden="true"></canvas></div>
 
 <section class="services" id="services">
   <div class="wrap">
@@ -287,33 +315,8 @@ When works:
   </div>
 </section>
 
-<div class="seam" data-seam style="--from:#0f1b30;--to:#dfe6ef"><canvas aria-hidden="true"></canvas></div>
 
-<section class="work" id="work">
-  <div class="wrap">
-    <h2>Before &amp; after</h2>
-    <div class="work-grid">
-      <figure class="ba" data-ba>
-        <img src="img/garage-after.webp" width="800" height="1000" loading="lazy" decoding="async" alt="After: the same garage cleared down to the concrete floor" draggable="false">
-        <div class="ba-before"><img src="img/garage-before.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Before: a one-car garage packed wall to wall with boxes, bags, a grill and a pressure washer" draggable="false"></div>
-        <span class="ba-tag ba-tag-b" aria-hidden="true">Before</span><span class="ba-tag ba-tag-a" aria-hidden="true">After</span>
-        <div class="ba-line" aria-hidden="true"><span class="ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
-        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after: slide to compare">
-      </figure>
-      <figure class="ba" data-ba>
-        <img src="img/corner-after.webp" width="800" height="1000" loading="lazy" decoding="async" alt="After: the same corner cleared, with the shelves left in place" draggable="false">
-        <div class="ba-before"><img src="img/corner-before.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Before: the back corner of a garage stacked with bins, a dresser, a heater and a carpet cleaner" draggable="false"></div>
-        <span class="ba-tag ba-tag-b" aria-hidden="true">Before</span><span class="ba-tag ba-tag-a" aria-hidden="true">After</span>
-        <div class="ba-line" aria-hidden="true"><span class="ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
-        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after: slide to compare">
-      </figure>
-      <figure class="shot"><img src="img/cleared-garage.webp" width="800" height="1000" loading="lazy" decoding="async" alt="A cleared garage floor, with the loaded trailer waiting outside the door"></figure>
-    </div>
-    <a class="btn btn-fb" href="https://www.facebook.com/profile.php?id=61587889134420"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9a.5.5 0 0 1 .5-.5z"/></svg>See our Facebook for more of our work</a>
-  </div>
-</section>
-
-<div class="seam" data-seam style="--from:#dfe6ef;--to:#1462c4"><canvas aria-hidden="true"></canvas></div>
+<div class="seam" data-seam style="--from:#0f1b30;--to:#1462c4"><canvas aria-hidden="true"></canvas></div>
 
 <section class="promise" aria-labelledby="promiseH">
   <div class="wrap">
@@ -361,17 +364,25 @@ When works:
 <script>
 /* ============ TUNABLES (Ellie: tweak here) ============ */
 var DW = {
-  rubble: {
-    lanesPhone: 11, lanesDesk: 9,   // rows of chunks, back to front
-    sizePhone: 0.95, sizeDesk: 1,   // chunk size multiplier
-    surface: 0.30,                 // pile top, as a share of the band from the top
+  junk: {
+    lanesPhone: 8, lanesDesk: 7,   // rows of junk, back to front
+    sizePhone: 1.0, sizeDesk: 1.45, // junk size multiplier
+    surface: 0.34,                 // pile top, as a share of the band from the top
     roll: 1.0,                     // speed of the pile's rolling surface
     pushRadius: 80, push: 2600,    // pointer shove
-    carry: 0.5,                    // share of pointer velocity handed to chunks
-    kick: 560,                     // tap/click flick strength
+    carry: 0.5,                    // share of pointer velocity handed to junk
+    kick: 620,                     // tap/click flick strength
     spring: 38, damping: 6.5,      // spring back + wobble
-    flyTime: 1.2,                  // seconds a freed chunk takes to vanish
-    dustPhone: 26, dustDesk: 64    // rising dust motes
+    gravity: 1500,                 // how fast flung junk falls back
+    dustPhone: 18, dustDesk: 40    // rising dust motes
+  },
+  crew: {
+    scalePhone: 0.62, scaleDesk: 1, // truck, trailer and worker size
+    walk: 70,                      // worker walking speed (px/s at desktop size)
+    person: 1.4,                   // worker size relative to the truck
+    gap: 70,                       // open ground between the trailer and the pile
+    loadPhone: 7, loadDesk: 10,    // pieces in the trailer before the truck hauls it off
+    away: 1.6                      // seconds the truck is gone before it backs in empty
   },
   chain: {
     linkPhone: 24, linkDesk: 32,   // link length in px
@@ -422,93 +433,417 @@ var DW = {
     return { w: w, h: h };
   }
 
-  /* ============ RUBBLE SPRITES ============ */
-  // Chiseled chunks like the logo's concrete blocks: a lit top face plus shaded side facets.
-  var PALETTE = [ [214,10,60,.34], [216,18,42,.24], [210,28,58,.2], [208,82,50,.1], [218,22,30,.12] ];
-  var LIGHT = Math.atan2(-0.8, -0.6);
-  function pickColor(r){ var x = r(), a = 0; for (var i = 0; i < PALETTE.length; i++) { a += PALETTE[i][3]; if (x <= a) return PALETTE[i]; } return PALETTE[0]; }
-  function hsl(c, dl, k){ return 'hsl(' + c[0] + ',' + c[1] + '%,' + Math.max(4, Math.min(92, (c[2] + dl) * k)).toFixed(1) + '%)'; }
-  function makeChunk(rad, tier, r){
-    var pad = Math.ceil(rad * 0.6) + 3, size = rad * 2 + pad * 2;
-    var cv = document.createElement('canvas'); cv.width = cv.height = Math.ceil(size * DPR);
-    var g = cv.getContext('2d'); g.scale(DPR, DPR); g.translate(size / 2, size / 2);
-    var k = 5 + Math.floor(r() * 4), outer = [], inner = [], a0 = r() * 6.28;
-    for (var i = 0; i < k; i++) {
-      var a = a0 + (i / k) * 6.283 + (r() - .5) * 0.5, rr = rad * (0.72 + r() * 0.28);
-      outer.push([Math.cos(a) * rr, Math.sin(a) * rr * (0.78 + r() * 0.2)]);
+  /* ============ JUNK SPRITES ============ */
+  // Household junk drawn as solid, shaded objects. Back rows sink into the navy night.
+  var KINDS = ['box', 'bag', 'tire', 'chair', 'couch', 'pallet', 'bin', 'tv', 'bucket', 'branches', 'washer', 'mattress', 'box', 'bag', 'box'];
+  var BIG = { couch: 1.2, washer: 1.05, mattress: 1.15, bucket: 0.75, tire: 0.85, tv: 0.85 };
+  function rrect(g, x, y, w, h, q){ g.beginPath(); g.moveTo(x + q, y); g.arcTo(x + w, y, x + w, y + h, q); g.arcTo(x + w, y + h, x, y + h, q); g.arcTo(x, y + h, x, y, q); g.arcTo(x, y, x + w, y, q); g.closePath(); }
+  function vgrad(g, y0, y1, a, b){ var gr = g.createLinearGradient(0, y0, 0, y1); gr.addColorStop(0, a); gr.addColorStop(1, b); return gr; }
+  var DRAW = {
+    box: function(g, R, r){
+      var w = R * (1.45 + r() * .45), h = R * (1.0 + r() * .4);
+      g.fillStyle = vgrad(g, -h / 2, h / 2, '#cf9f63', '#8a6131'); rrect(g, -w / 2, -h / 2, w, h, R * .06); g.fill();
+      g.fillStyle = 'rgba(255,238,205,.22)'; g.fillRect(-w / 2, -h / 2, w, h * .2);
+      g.fillStyle = 'rgba(70,42,18,.5)'; g.fillRect(-w / 2, -h / 2 + h * .2, w, Math.max(1, R * .06));
+      g.fillStyle = 'rgba(236,218,178,.85)'; g.fillRect(-w * .08, -h / 2, w * .16, h * .55);
+    },
+    bag: function(g, R){
+      var gr = g.createRadialGradient(-R * .3, -R * .25, R * .1, 0, 0, R * 1.05); gr.addColorStop(0, '#56637a'); gr.addColorStop(.55, '#1c2433'); gr.addColorStop(1, '#090d15');
+      g.fillStyle = gr; g.beginPath(); g.moveTo(0, -R * .62);
+      g.bezierCurveTo(R * .95, -R * .55, R * 1.05, R * .75, R * .15, R * .8);
+      g.bezierCurveTo(-R * .4, R * .88, -R * 1.05, R * .62, -R * .88, -R * .1);
+      g.bezierCurveTo(-R * .75, -R * .52, -R * .35, -R * .64, 0, -R * .62); g.fill();
+      g.fillStyle = '#121925'; g.beginPath(); g.moveTo(-R * .12, -R * .6); g.lineTo(-R * .32, -R * .92); g.lineTo(-R * .02, -R * .76); g.lineTo(R * .26, -R * .95); g.lineTo(R * .14, -R * .6); g.closePath(); g.fill();
+    },
+    tire: function(g, R){
+      var o = R * .86; g.fillStyle = '#141922'; g.beginPath(); g.arc(0, 0, o, 0, 6.283); g.fill();
+      g.strokeStyle = '#2a3341'; g.lineWidth = R * .1;
+      for (var i = 0; i < 16; i++) { var a = i / 16 * 6.283; g.beginPath(); g.moveTo(Math.cos(a) * o * .8, Math.sin(a) * o * .8); g.lineTo(Math.cos(a) * o * .97, Math.sin(a) * o * .97); g.stroke(); }
+      g.fillStyle = vgrad(g, -R * .45, R * .45, '#d5dee9', '#55657c'); g.beginPath(); g.arc(0, 0, R * .46, 0, 6.283); g.fill();
+      g.fillStyle = '#1b2230'; g.beginPath(); g.arc(0, 0, R * .16, 0, 6.283); g.fill();
+    },
+    chair: function(g, R, r){
+      var wood = r() < .5, c = wood ? '#9a6539' : '#c9ced6', d = wood ? '#5e3b1f' : '#7f8a9a';
+      g.lineCap = 'round'; g.lineWidth = R * .16; g.strokeStyle = d;
+      g.beginPath(); g.moveTo(-R * .5, 0); g.lineTo(-R * .58, R * .85); g.moveTo(R * .5, 0); g.lineTo(R * .58, R * .85); g.stroke();
+      g.fillStyle = c; rrect(g, -R * .66, -R * .95, R * .22, R, R * .07); g.fill();
+      g.fillStyle = vgrad(g, -R * .12, R * .12, c, d); rrect(g, -R * .64, -R * .1, R * 1.26, R * .22, R * .05); g.fill();
+    },
+    couch: function(g, R, r){
+      var base = ['#5b6b82', '#7a5a46', '#4d6a5a', '#8a8f99'][Math.floor(r() * 4)], w = R * 1.9, h = R * .95;
+      g.fillStyle = '#1a1f29'; g.fillRect(-w * .42, h * .38, R * .12, R * .2); g.fillRect(w * .36, h * .38, R * .12, R * .2);
+      g.fillStyle = base; rrect(g, -w / 2 + R * .12, -h / 2, w - R * .24, h * .62, R * .18); g.fill();
+      rrect(g, -w / 2 + R * .05, -h * .05, w - R * .1, h * .48, R * .12); g.fill();
+      g.fillStyle = 'rgba(255,255,255,.12)'; rrect(g, -w / 2 + R * .12, -h / 2, w - R * .24, h * .2, R * .14); g.fill();
+      g.fillStyle = 'rgba(0,0,0,.28)'; g.fillRect(-w * .02, -h * .05, R * .05, h * .45);
+      g.fillStyle = base; rrect(g, -w / 2 - R * .02, -h * .25, R * .32, h * .7, R * .14); g.fill(); rrect(g, w / 2 - R * .3, -h * .25, R * .32, h * .7, R * .14); g.fill();
+      g.fillStyle = 'rgba(0,0,0,.22)'; rrect(g, -w / 2 - R * .02, h * .2, R * .32, h * .25, R * .1); g.fill(); rrect(g, w / 2 - R * .3, h * .2, R * .32, h * .25, R * .1); g.fill();
+    },
+    mattress: function(g, R){
+      var w = R * 1.9, h = R * .6;
+      g.fillStyle = vgrad(g, -h / 2, h / 2, '#eef1f5', '#a9b4c3'); rrect(g, -w / 2, -h / 2, w, h, R * .2); g.fill();
+      g.fillStyle = 'rgba(80,96,120,.4)'; g.fillRect(-w / 2 + R * .15, -h * .2, w - R * .3, Math.max(1, R * .05));
+      for (var i = -3; i <= 3; i++) { g.beginPath(); g.arc(i * w * .13, h * .14, R * .045, 0, 6.283); g.fill(); }
+      g.fillStyle = 'rgba(150,120,70,.25)'; g.beginPath(); g.ellipse(R * .3, h * .05, R * .35, h * .25, .2, 0, 6.283); g.fill();
+    },
+    pallet: function(g, R){
+      var w = R * 1.8, t = R * .2;
+      g.fillStyle = '#b48853'; g.fillRect(-w / 2, -R * .4, w, t); g.fillRect(-w / 2, R * .22, w, t);
+      g.fillStyle = '#7d5a33'; for (var i = 0; i < 3; i++) g.fillRect(-w / 2 + i * (w - R * .34) / 2, -R * .2, R * .34, R * .42);
+      g.fillStyle = 'rgba(255,240,210,.18)'; g.fillRect(-w / 2, -R * .4, w, t * .4); g.fillRect(-w / 2, R * .22, w, t * .4);
+    },
+    bin: function(g, R){
+      var top = R * 1.5, bot = R * 1.2, h = R * 1.15;
+      g.fillStyle = vgrad(g, -h / 2, h / 2, '#3d97ee', '#14509c'); g.beginPath(); g.moveTo(-top / 2, -h / 2); g.lineTo(top / 2, -h / 2); g.lineTo(bot / 2, h / 2); g.lineTo(-bot / 2, h / 2); g.closePath(); g.fill();
+      g.fillStyle = '#0f3e7c'; rrect(g, -top / 2 - R * .06, -h / 2 - R * .14, top + R * .12, R * .2, R * .06); g.fill();
+      g.fillStyle = 'rgba(8,24,52,.55)'; rrect(g, -R * .22, -h / 2 + R * .18, R * .44, R * .12, R * .05); g.fill();
+    },
+    tv: function(g, R){
+      var w = R * 1.6, h = R * 1.15;
+      g.fillStyle = '#1a202b'; rrect(g, -w / 2, -h / 2, w, h, R * .12); g.fill();
+      var gr = g.createLinearGradient(-w / 2, -h / 2, w / 2, h / 2); gr.addColorStop(0, '#5a7699'); gr.addColorStop(1, '#16202f');
+      g.fillStyle = gr; rrect(g, -w / 2 + R * .14, -h / 2 + R * .14, w - R * .5, h - R * .28, R * .14); g.fill();
+      g.fillStyle = '#3a4556'; g.beginPath(); g.arc(w / 2 - R * .2, -h * .15, R * .07, 0, 6.283); g.arc(w / 2 - R * .2, h * .08, R * .07, 0, 6.283); g.fill();
+    },
+    bucket: function(g, R){
+      var top = R * 1.25, bot = R * 1.05, h = R * 1.3;
+      g.fillStyle = vgrad(g, -h / 2, h / 2, '#f1f4f8', '#98a5b6'); g.beginPath(); g.moveTo(-top / 2, -h / 2); g.lineTo(top / 2, -h / 2); g.lineTo(bot / 2, h / 2); g.lineTo(-bot / 2, h / 2); g.closePath(); g.fill();
+      g.fillStyle = '#2694f1'; g.fillRect(-top * .43, -h * .05, top * .86, h * .28);
+      g.fillStyle = '#c5ced9'; rrect(g, -top / 2 - R * .05, -h / 2 - R * .06, top + R * .1, R * .14, R * .05); g.fill();
+      g.strokeStyle = '#6b778a'; g.lineWidth = R * .07; g.beginPath(); g.arc(0, -h / 2, top * .42, Math.PI * 1.05, Math.PI * 1.95); g.stroke();
+    },
+    branches: function(g, R, r){
+      g.lineCap = 'round'; g.strokeStyle = '#6e4b2c';
+      for (var i = 0; i < 6; i++) {
+        var y = (r() - .5) * R * .8, a = (r() - .5) * .5; g.lineWidth = R * (.07 + r() * .08);
+        g.beginPath(); g.moveTo(-R * .95, y); g.quadraticCurveTo(0, y + (r() - .5) * R * .5, R * .95, y + Math.tan(a) * R); g.stroke();
+        g.lineWidth *= .6; var bx = (r() - .3) * R; g.beginPath(); g.moveTo(bx, y); g.lineTo(bx + R * .3, y - R * (.25 + r() * .3)); g.stroke();
+      }
+      g.fillStyle = '#4f6b3a'; for (i = 0; i < 7; i++) { g.beginPath(); g.ellipse((r() - .5) * R * 1.6, (r() - .5) * R, R * .13, R * .07, r() * 3, 0, 6.283); g.fill(); }
+    },
+    washer: function(g, R){
+      var w = R * 1.35, h = R * 1.45;
+      g.fillStyle = vgrad(g, -h / 2, h / 2, '#f3f6f9', '#a6b2c2'); rrect(g, -w / 2, -h / 2, w, h, R * .1); g.fill();
+      g.fillStyle = '#c8d1dc'; g.fillRect(-w / 2, -h / 2 + R * .08, w, R * .26);
+      g.fillStyle = '#2b3646'; g.beginPath(); g.arc(-w * .3, -h / 2 + R * .21, R * .07, 0, 6.283); g.fill();
+      g.fillStyle = '#7d8a9c'; g.beginPath(); g.arc(0, R * .18, R * .48, 0, 6.283); g.fill();
+      var gr = g.createRadialGradient(-R * .1, R * .08, R * .05, 0, R * .18, R * .38); gr.addColorStop(0, '#9fc3ea'); gr.addColorStop(1, '#2b4566');
+      g.fillStyle = gr; g.beginPath(); g.arc(0, R * .18, R * .37, 0, 6.283); g.fill();
     }
-    var cx = -rad * 0.14, cy = -rad * 0.2, sh = 0.42 + r() * 0.16;
-    for (i = 0; i < k; i++) inner.push([cx + (outer[i][0] - cx) * sh, cy + (outer[i][1] - cy) * sh]);
-    var col = pickColor(r), dk = [0.66, 0.84, 1][tier];
-    function poly(pts){ g.beginPath(); g.moveTo(pts[0][0], pts[0][1]); for (var j = 1; j < pts.length; j++) g.lineTo(pts[j][0], pts[j][1]); g.closePath(); }
-    g.save(); g.shadowColor = 'rgba(3,8,20,.6)'; g.shadowBlur = rad * 0.5 * DPR; g.shadowOffsetX = rad * 0.1 * DPR; g.shadowOffsetY = rad * 0.24 * DPR;
-    poly(outer); g.fillStyle = hsl(col, -6, dk); g.fill(); g.restore();
-    for (i = 0; i < k; i++) {
-      var o1 = outer[i], o2 = outer[(i + 1) % k], n1 = inner[i], n2 = inner[(i + 1) % k];
-      var ang = Math.atan2((o1[1] + o2[1]) / 2, (o1[0] + o2[0]) / 2), lit = Math.cos(ang - LIGHT);
-      poly([n1, n2, o2, o1]); g.fillStyle = hsl(col, lit * 16 - 4, dk); g.fill(); g.strokeStyle = g.fillStyle; g.lineWidth = 0.7; g.stroke();
-    }
-    poly(inner); g.fillStyle = hsl(col, 12, dk); g.fill(); g.strokeStyle = g.fillStyle; g.lineWidth = 0.7; g.stroke();
-    for (i = 0; i < 4 + rad / 3; i++) { g.fillStyle = 'rgba(10,18,34,' + (0.12 + r() * 0.16) + ')'; g.beginPath(); g.arc((r() - .5) * rad, (r() - .5) * rad * 0.9, 0.5 + r() * 1.1, 0, 6.283); g.fill(); }
-    return { cv: cv, size: size, r: rad };
+  };
+  function makeJunk(kind, rad, tier, r){
+    var pad = Math.ceil(rad * .5) + 4, size = rad * 2 + pad * 2, px = Math.ceil(size * DPR);
+    var o = document.createElement('canvas'); o.width = o.height = px;
+    var og = o.getContext('2d'); og.scale(DPR, DPR); og.translate(size / 2, size / 2); og.lineJoin = 'round';
+    DRAW[kind](og, rad, r);
+    var cv = document.createElement('canvas'); cv.width = cv.height = px;
+    var g = cv.getContext('2d');
+    g.shadowColor = 'rgba(3,8,20,.6)'; g.shadowBlur = rad * .45 * DPR; g.shadowOffsetX = rad * .08 * DPR; g.shadowOffsetY = rad * .22 * DPR;
+    g.drawImage(o, 0, 0);
+    var dk = [0.5, 0.76, 1][tier];
+    if (dk < 1) { g.shadowColor = 'transparent'; g.globalCompositeOperation = 'source-atop'; g.fillStyle = 'rgba(15,27,48,' + (1 - dk) + ')'; g.fillRect(0, 0, px, px); }
+    return { cv: cv, size: size, r: rad, kind: kind };
   }
   var spriteCache = {};
   function sprites(scale){
-    var key = scale; if (spriteCache[key]) return spriteCache[key];
-    var r = rng(4242), tiers = [[], [], []], ranges = [[6, 11], [9, 16], [13, 24]];
-    for (var t = 0; t < 3; t++) for (var i = 0; i < 14; i++) tiers[t].push(makeChunk((ranges[t][0] + r() * (ranges[t][1] - ranges[t][0])) * scale, t, r));
-    return (spriteCache[key] = tiers);
+    if (spriteCache[scale]) return spriteCache[scale];
+    var r = rng(4242), tiers = [[], [], []], ranges = [[9, 14], [12, 19], [15, 25]];
+    for (var t = 0; t < 3; t++) for (var i = 0; i < 18; i++) {
+      var k = KINDS[Math.floor(r() * KINDS.length)];
+      tiers[t].push(makeJunk(k, (ranges[t][0] + r() * (ranges[t][1] - ranges[t][0])) * scale * (BIG[k] || 1), t, r));
+    }
+    return (spriteCache[scale] = tiers);
+  }
+  var LOGO = new Image(), logoReady = false;
+  (function(){
+    var m = getComputedStyle(document.documentElement).getPropertyValue('--logo').match(/url\(\s*["']?([^"')]+)["']?\s*\)/);
+    if (m) { LOGO.onload = function(){ logoReady = true; }; LOGO.src = m[1]; }
+  })();
+  function wheel(g, x, y, r, spin){
+    g.fillStyle = '#0b0f16'; g.beginPath(); g.arc(x, y, r, 0, 6.283); g.fill();
+    g.fillStyle = vgrad(g, y - r * .55, y + r * .55, '#d5dee9', '#5b6b82'); g.beginPath(); g.arc(x, y, r * .55, 0, 6.283); g.fill();
+    g.fillStyle = '#1b2230';
+    for (var i = 0; i < 5; i++) { var a = spin + i * 1.2566; g.beginPath(); g.arc(x + Math.cos(a) * r * .3, y + Math.sin(a) * r * .3, r * .08, 0, 6.283); g.fill(); }
+    g.beginPath(); g.arc(x, y, r * .14, 0, 6.283); g.fill();
   }
 
-  /* ============ HEAP: the rubble pile (hero + close) ============ */
+  /* ============ HEAP: the junk pile (hero + close). The hero's heap (data-crew) adds the truck, trailer and worker. ============ */
   function Heap(el, seed){
     var back = el.querySelector('.rubble-back'), front = el.querySelector('.rubble-front');
     var bg = back.getContext('2d'), fg = front.getContext('2d');
-    var C = DW.rubble, W, H, EXT, chunks = [], dust = [], ph = seed;
+    var C = DW.junk, Q = DW.crew, crewOn = el.hasAttribute('data-crew');
+    var W, H, EXT, U = 1, chunks = [], dust = [], loose = [], load = [], cols = [], ph = seed, lastT = 0;
+    var GY, TL, WH, WR, trailerX, clearEnd, reach, dropX, cap, truck, man;
+    function mask(x){ if (!crewOn) return 1; var k = (x - clearEnd) / (70 * U); return k <= 0 ? 0 : k >= 1 ? 1 : k * k * (3 - 2 * k); }
     function surf(x, t){
       var s = C.roll;
-      return H * (C.surface + 0.07 * Math.sin(x * 0.011 + t * 0.9 * s + ph) + 0.045 * Math.sin(x * 0.027 - t * 1.4 * s + ph * 2) + 0.025 * Math.sin(x * 0.061 + t * 2.3 * s));
+      var y = H * (C.surface + 0.07 * Math.sin(x * 0.011 + t * 0.9 * s + ph) + 0.045 * Math.sin(x * 0.027 - t * 1.4 * s + ph * 2) + 0.025 * Math.sin(x * 0.061 + t * 2.3 * s));
+      return crewOn ? GY - (GY - y) * mask(x) : y;
     }
     function resize(){
       var d = fitCanvas(back); fitCanvas(front);
       W = d.w; EXT = d.h - el.clientHeight; H = el.clientHeight;
-      var r = rng(seed * 977 + 13), mob = phone(), L = mob ? C.lanesPhone : C.lanesDesk, set = sprites(mob ? C.sizePhone : C.sizeDesk);
-      chunks = [];
+      var mob = phone(), r = rng(seed * 977 + 13), L = mob ? C.lanesPhone : C.lanesDesk, set = sprites(mob ? C.sizePhone : C.sizeDesk);
+      U = mob ? Q.scalePhone : Q.scaleDesk; GY = H - (mob ? 40 : 26); TL = 210 * U; WH = 58 * U; WR = 15 * U;
+      trailerX = mob ? 8 : Math.max(24, W * 0.40 - 14 * U - TL); clearEnd = trailerX + TL + Q.gap * U; reach = clearEnd + 100 * U; dropX = trailerX + TL + 9 * U;
+      chunks = []; loose = []; load = [];
       for (var j = 0; j < L; j++) {
         var depth = j / (L - 1), tier = depth < 0.34 ? 0 : depth < 0.67 ? 1 : 2, x = -20;
         while (x < W + 20) {
-          var sp = set[tier][Math.floor(r() * set[tier].length)];
-          chunks.push({ s: sp, x0: x + (r() - .5) * sp.r * 0.6, d: depth, jy: (r() - .5) * (H * (1 - C.surface) / (L - 1)) * 0.9, ph: r() * 6.28, rot: r() * 6.28,
-            ox: 0, oy: 0, vx: 0, vy: 0, a: 0, av: 0, st: 0, fx: 0, fy: 0, fvx: 0, fvy: 0, life: 0, wait: 0, dy: 0, dvy: 0 });
-          x += sp.r * (1.15 + r() * 0.45);
+          var sp = set[tier][Math.floor(r() * set[tier].length)], x0 = x + (r() - .5) * sp.r * 0.6;
+          if (mask(x0) > 0.2) chunks.push({ s: sp, x0: x0, d: depth, jy: (r() - .5) * (H * (1 - C.surface) / (L - 1)) * 0.9, ph: r() * 6.28, rot: (r() - .5) * 1.1,
+            ox: 0, oy: 0, vx: 0, vy: 0, a: 0, av: 0, st: 0, fx: 0, fy: 0, fvx: 0, fvy: 0, wait: 0, dy: 0, dvy: 0, px: 0, py: 0 });
+          x += sp.r * (1.25 + r() * 0.5);
         }
       }
       var n = mob ? C.dustPhone : C.dustDesk; dust = [];
       for (var i = 0; i < n; i++) dust.push(newDust(r, true));
+      if (crewOn) {
+        cols = new Float32Array(Math.max(1, Math.floor(TL / (14 * U))));
+        cap = mob ? Q.loadPhone : Q.loadDesk;
+        truck = { x: 0, st: 'parked', t: 0, spin: 0, from: 0 };
+        man = { x: clearEnd + 16 * U, dir: -1, st: 'idle', t: 0.8, ph: 0, bend: 0, lift: 1, item: null, tgt: null, from: null, moving: false };
+        for (i = 0; i < 3; i++) { var it = { s: set[2][(i * 5 + 3) % set[2].length], rot: (r() - .5) * .8 }; place(it); it.st = 'in'; load.push(it); }
+      }
       sys.step(0, lastT);
     }
     function newDust(r, anywhere){
       r = r || Math.random;
-      return { x: r() * W, y: anywhere ? r() * (EXT + H * 0.5) : EXT + H * (0.25 + r() * 0.2), vy: 8 + r() * 16, s: 0.8 + r() * 1.8, ph: r() * 6.28, ox: 0, oy: 0, vx: 0, vyo: 0 };
+      var x = r() * W; if (crewOn && x < clearEnd) x = clearEnd + r() * (W - clearEnd);
+      return { x: x, y: anywhere ? r() * (EXT + H * 0.5) : EXT + H * (0.25 + r() * 0.2), vy: 8 + r() * 16, s: 0.8 + r() * 1.8, ph: r() * 6.28, ox: 0, oy: 0, vx: 0, vyo: 0 };
     }
     function draw(g, c, x, y, ang, sc, alpha){
       var w = c.s.size * sc, cs = Math.cos(ang) * DPR, sn = Math.sin(ang) * DPR;
       g.globalAlpha = alpha; g.setTransform(cs, sn, -sn, cs, x * DPR, y * DPR); g.drawImage(c.s.cv, -w / 2, -w / 2, w, w);
     }
-    var lastT = 0;
+    // shared shove: pointer pushes an object with offset (ox, oy) and velocity (vx, vy)
+    function shove(o, px, py, depth, near, lx, ly, R, R2, dt){
+      if (!near) return;
+      var dx = px - lx, dy = py - ly, d2 = dx * dx + dy * dy;
+      if (d2 >= R2) return;
+      var dd = Math.sqrt(d2) || 1, f = 1 - dd / R; f *= f;
+      o.vx += (dx / dd * C.push * f + P.vx * C.carry * f) * dt;
+      o.vy += (dy / dd * C.push * f + P.vy * C.carry * f) * dt;
+      o.av += (dx * P.vy - dy * P.vx) / dd * 0.0035 * f;
+      if (P.kick) { o.vy -= C.kick * f * (1.4 - depth); o.vx += dx / dd * C.kick * 0.5 * f; o.av += (Math.random() - .5) * 14 * f; }
+    }
+    function spring(o, dt){
+      var K = C.spring, D = C.damping;
+      o.vx += (-K * o.ox - D * o.vx) * dt; o.vy += (-K * o.oy - D * o.vy) * dt; o.ox += o.vx * dt; o.oy += o.vy * dt;
+      o.av += (-K * 0.5 * o.a - D * 0.7 * o.av) * dt; o.a += o.av * dt;
+    }
+    function vacate(c){ c.st = 2; c.wait = 2 + Math.random() * 3; c.dy = -EXT - 30; c.dvy = 0; c.ox = c.oy = c.vx = c.vy = c.a = c.av = 0; }
+
+    /* ---- the crew: the trailer fills, the truck hauls it off and backs in empty ---- */
+    function place(it){
+      var bw = 14 * U, span = Math.max(1, Math.min(cols.length, Math.round(it.s.r * 1.5 / bw))), best = 0, bh = 1e9, i, j, m;
+      for (i = 0; i + span <= cols.length; i++) { m = 0; for (j = i; j < i + span; j++) m = Math.max(m, cols[j]); m += Math.random() * 6 * U; if (m < bh) { bh = m; best = i; } }
+      var top = 0; for (j = best; j < best + span; j++) top = Math.max(top, cols[j]);
+      it.lx = (best + span / 2) * bw + (TL - cols.length * bw) / 2; it.ly = -top - it.s.r * 0.5;
+      for (j = best; j < best + span; j++) cols[j] = top + it.s.r;
+      it.ox = it.oy = it.vx = it.vy = it.a = it.av = 0;
+    }
+    function full(){ var m = 0; for (var i = 0; i < cols.length; i++) m = Math.max(m, cols[i]); return load.length >= cap || m > WH + 22 * U; }
+    function restY(o){ return mask(o.x) > 0.3 ? surf(o.x, lastT) - o.s.r * 0.2 : GY - o.s.r * 0.55; }
+    function pickTarget(){
+      var best = null, bd = 1e9, i;
+      for (i = 0; i < loose.length; i++) { var o = loose[i]; if (o.st === 'ground' && o.x > 4 && o.x < reach) { var dd = Math.abs(o.x - dropX); if (dd < bd) { bd = dd; best = o; } } }
+      if (best) {
+        var ob = best;
+        return { x: function(){ return ob.x; }, gone: function(){ return ob.st !== 'ground' || loose.indexOf(ob) < 0; },
+          standX: function(){ return ob.x + (man.x < ob.x ? -1 : 1) * (ob.s.r * 0.5 + 6 * U); },
+          take: function(){ var k = loose.indexOf(ob); if (k < 0 || ob.st !== 'ground') return null; loose.splice(k, 1); man.from = { x: ob.x, y: ob.y }; return { s: ob.s, rot: ob.a }; } };
+      }
+      var cand = [];
+      for (i = 0; i < chunks.length; i++) { var c = chunks[i]; if (c.st === 0 && c.d >= 0.55 && c.x0 < reach) cand.push(c); }
+      if (!cand.length) return null;
+      cand.sort(function(a, b){ return a.x0 - b.x0; });
+      var ch = cand[Math.floor(Math.random() * Math.min(cand.length, 6))];
+      return { x: function(){ return ch.x0; }, gone: function(){ return ch.st !== 0; },
+        standX: function(){ return Math.max(dropX + 10 * U, Math.min(ch.x0 - 8 * U, clearEnd + 34 * U)); },
+        take: function(){ if (ch.st !== 0) return null; man.from = { x: ch.px, y: ch.py }; vacate(ch); return { s: ch.s, rot: ch.rot }; } };
+    }
+    function handsY(){ return GY - 48 * U * Q.person; }
+    function crew(dt, near, lx, ly, R, R2){
+      var tx = trailerX + truck.x, floor = GY - WR * 1.3 - 3 * U, i, it, o, k;
+      // truck cycle
+      if (dt) {
+        if (truck.st === 'parked') {
+          var flying = false; for (i = 0; i < load.length; i++) if (load[i].st === 'toss') flying = true;
+          if (full() && !flying && man.st !== 'toss') { truck.st = 'leave'; truck.t = 0; }
+        } else if (truck.st === 'leave') {
+          truck.t += dt; var nx = -0.5 * 260 * U * truck.t * truck.t; truck.spin += (nx - truck.x) / WR; truck.x = nx;
+          if (trailerX + truck.x + TL < -20) { truck.st = 'away'; truck.t = 0; load = []; cols.fill(0); }
+        } else if (truck.st === 'away') {
+          truck.t += dt; if (truck.t > Q.away) { truck.st = 'back'; truck.t = 0; truck.from = truck.x; }
+        } else {
+          truck.t += dt; k = Math.min(1, truck.t / 2.4); var e = 1 - Math.pow(1 - k, 3), bx = truck.from * (1 - e);
+          truck.spin += (bx - truck.x) / WR; truck.x = bx; if (k >= 1) { truck.st = 'parked'; truck.x = 0; }
+        }
+      }
+      tx = trailerX + truck.x;
+      // worker: fetch junk, carry it overhead, toss it in
+      var spd = Q.walk * U; man.moving = false;
+      function walkTo(x){ var dx = x - man.x; if (Math.abs(dx) < 1.5) { man.x = x; return true; } man.dir = dx < 0 ? -1 : 1; man.x += (dx < 0 ? -1 : 1) * Math.min(Math.abs(dx), spd * dt); man.ph += dt * 11; man.moving = true; return false; }
+      if (dt) switch (man.st) {
+        case 'idle':
+          man.t -= dt; man.bend = Math.max(0, man.bend - dt * 4);
+          if (man.t <= 0) { if (truck.st === 'parked' && !full()) { man.tgt = pickTarget(); if (man.tgt) man.st = 'fetch'; else man.t = 0.5; } else man.t = 0.3; }
+          break;
+        case 'fetch':
+          if (man.tgt.gone()) { man.st = 'idle'; man.t = 0.15; break; }
+          if (walkTo(man.tgt.standX())) { man.st = 'pick'; man.t = 0; man.dir = man.tgt.x() >= man.x ? 1 : -1; }
+          break;
+        case 'pick':
+          man.t += dt;
+          if (man.t < 0.3) man.bend = Math.min(1, man.t / 0.3);
+          else {
+            if (!man.item) { man.item = man.tgt.take(); man.lift = 0; if (!man.item) { man.st = 'idle'; man.t = 0.2; break; } }
+            man.bend = Math.max(0, 1 - (man.t - 0.3) / 0.3); man.lift = Math.min(1, (man.t - 0.3) / 0.3);
+            if (man.t > 0.62) man.st = 'carry';
+          }
+          break;
+        case 'carry':
+          if (walkTo(dropX)) { man.dir = -1; if (truck.st === 'parked') { man.st = 'toss'; man.t = 0; } }
+          break;
+        case 'toss':
+          man.t += dt;
+          if (man.t > 0.22 && man.item) { it = man.item; man.item = null; place(it); it.st = 'toss'; it.t = 0; it.sx = man.x - 6 * U * Q.person; it.sy = handsY() - it.s.r * 0.55; it.x = it.sx; it.y = it.sy; load.push(it); }
+          if (man.t > 0.5) { man.st = 'idle'; man.t = 0.15 + Math.random() * 0.4; }
+          break;
+      }
+      // the load: shoved and jumbled by the pointer, and knocked clean out if hit hard
+      for (i = load.length - 1; i >= 0; i--) {
+        it = load[i]; var hx = tx + it.lx, hy = floor + it.ly;
+        if (it.st === 'toss') {
+          it.t += dt / 0.45; k = Math.min(1, it.t);
+          it.x = it.sx + (hx - it.sx) * k; it.y = it.sy + (hy - it.sy) * k - Math.sin(k * Math.PI) * 34 * U;
+          if (k >= 1) it.st = 'in';
+          continue;
+        }
+        var px = hx + it.ox, py = hy + it.oy;
+        if (dt) { shove(it, px, py, 0.3, near, lx, ly, R, R2, dt); spring(it, dt); }
+        it.x = hx + it.ox; it.y = hy + it.oy;
+        if ((it.oy < -it.s.r * 1.1 && it.vy < -140) || Math.abs(it.ox) > it.s.r * 2.4) {
+          load.splice(i, 1);
+          loose.push({ s: it.s, x: it.x, y: it.y, vx: it.vx * 0.8, vy: Math.min(it.vy * 0.8, -160), a: it.rot + it.a, av: it.av || (Math.random() - .5) * 8, st: 'fly', age: 0, fade: 0 });
+        }
+      }
+      // junk on the ground: shoved, kicked back up, and picked up by the worker
+      for (i = loose.length - 1; i >= 0; i--) {
+        o = loose[i];
+        if (!dt) continue;
+        if (o.st === 'fly') {
+          o.vy += C.gravity * dt; o.x += o.vx * dt; o.y += o.vy * dt; o.a += o.av * dt;
+          var land = restY(o);
+          if (o.vy > 0 && o.y >= land) { o.y = land; if (o.vy > 260) { o.vy *= -0.3; o.vx *= 0.6; o.av *= 0.5; } else { o.st = 'ground'; o.vy = 0; o.vx *= 0.3; o.av = 0; o.age = 0; } }
+          if (o.x < -80 || o.x > W + 80) loose.splice(i, 1);
+        } else {
+          o.age += dt;
+          if (near) {
+            var dx = o.x - lx, dy = o.y - ly, d2 = dx * dx + dy * dy;
+            if (d2 < R2) { var dd = Math.sqrt(d2) || 1, f = 1 - dd / R; f *= f; o.vx += (dx / dd * C.push * f + P.vx * C.carry * f) * dt * 0.6;
+              if (P.kick || P.vy < -700) { o.st = 'fly'; o.vy = -C.kick * f * 1.2 - 120; o.av = (Math.random() - .5) * 10; } }
+          }
+          o.vx *= Math.pow(0.03, dt); o.x += o.vx * dt; o.y = restY(o);
+          if (o.x > reach + 30 * U && o.age > 5) { o.fade += dt * 1.5; if (o.fade >= 1) loose.splice(i, 1); }
+        }
+      }
+    }
+    function drawTruck(g, xr, gy, spin){
+      var u = U; g.setTransform(DPR, 0, 0, DPR, 0, 0); g.globalAlpha = 1;
+      function X(v){ return xr - v * u; } function Y(v){ return gy - v * u; }
+      g.fillStyle = 'rgba(3,8,20,.45)'; g.beginPath(); g.ellipse(X(96), gy - 1, 100 * u, 5 * u, 0, 0, 6.283); g.fill();
+      g.fillStyle = vgrad(g, Y(92), Y(18), '#3a4963', '#111824');
+      g.beginPath(); g.moveTo(X(0), Y(20)); g.lineTo(X(0), Y(56)); g.lineTo(X(74), Y(56)); g.lineTo(X(78), Y(88));
+      g.quadraticCurveTo(X(80), Y(91), X(84), Y(91)); g.lineTo(X(112), Y(91)); g.quadraticCurveTo(X(116), Y(91), X(118), Y(88));
+      g.lineTo(X(132), Y(62)); g.lineTo(X(180), Y(58)); g.quadraticCurveTo(X(193), Y(56), X(193), Y(44)); g.lineTo(X(192), Y(22));
+      g.quadraticCurveTo(X(191), Y(18), X(187), Y(18)); g.lineTo(X(4), Y(18)); g.closePath(); g.fill();
+      g.fillStyle = '#0c121c'; g.fillRect(X(74), Y(58), 74 * u, 4 * u);
+      g.fillStyle = vgrad(g, Y(86), Y(62), '#a9cdf2', '#35557c');
+      g.beginPath(); g.moveTo(X(81), Y(85)); g.lineTo(X(113), Y(85)); g.lineTo(X(125), Y(63)); g.lineTo(X(81), Y(63)); g.closePath(); g.fill();
+      g.fillStyle = '#111824'; g.fillRect(X(101), Y(85), 3.5 * u, 22 * u);
+      g.fillStyle = '#2694f1'; g.fillRect(X(190), Y(41), 190 * u, 3.5 * u);
+      g.fillStyle = 'rgba(0,0,0,.35)'; g.fillRect(X(77), Y(61), 1.5 * u, 39 * u); g.fillRect(X(128), Y(61), 1.5 * u, 39 * u);
+      g.fillStyle = '#9fb0c5'; g.fillRect(X(96), Y(54), 8 * u, 2.5 * u);
+      g.fillStyle = vgrad(g, Y(28), Y(17), '#dfe6ef', '#7d8ba0'); rrect(g, X(197), Y(29), 13 * u, 10 * u, 2 * u); g.fill(); rrect(g, X(4), Y(27), 7 * u, 8 * u, 2 * u); g.fill();
+      g.fillStyle = '#fff3cf'; rrect(g, X(193), Y(51), 5 * u, 7 * u, 2 * u); g.fill();
+      g.fillStyle = '#d23a3f'; g.fillRect(X(2), Y(54), 3 * u, 10 * u);
+      g.fillStyle = '#070b12';
+      g.beginPath(); g.arc(X(36), gy - WR, WR + 3 * u, Math.PI, 0); g.fill(); g.beginPath(); g.arc(X(155), gy - WR, WR + 3 * u, Math.PI, 0); g.fill();
+      wheel(g, X(36), gy - WR, WR, -spin); wheel(g, X(155), gy - WR, WR, -spin);
+    }
+    function drawTrailer(g, x0, gy, spin){
+      var u = U; g.setTransform(DPR, 0, 0, DPR, 0, 0); g.globalAlpha = 1;
+      var yb = gy - WR * 1.3, yt = yb - WH, a1 = x0 + TL * .56, a2 = a1 + WR * 2.25, x, i;
+      g.fillStyle = 'rgba(3,8,20,.45)'; g.beginPath(); g.ellipse(x0 + TL / 2, gy - 1, TL * .55, 5 * u, 0, 0, 6.283); g.fill();
+      g.fillStyle = '#1b2330'; g.beginPath(); g.moveTo(x0, yb - 12 * u); g.lineTo(x0 - 26 * u, yb - 4 * u); g.lineTo(x0 - 26 * u, yb - 1 * u); g.lineTo(x0, yb - 4 * u); g.closePath(); g.fill();
+      g.fillStyle = '#7d8ba0'; g.beginPath(); g.arc(x0 - 26 * u, yb - 3 * u, 2.6 * u, 0, 6.283); g.fill();
+      wheel(g, a1, gy - WR, WR, -spin); wheel(g, a2, gy - WR, WR, -spin);
+      g.fillStyle = vgrad(g, yt, yb, '#232c3a', '#0d121a'); g.fillRect(x0, yt, TL, WH);
+      g.fillStyle = '#2b3546'; for (x = x0 + 6 * u; x < x0 + TL - 4 * u; x += 30 * u) g.fillRect(x, yt, 3 * u, WH);
+      g.fillStyle = '#343f52'; g.fillRect(x0 - 2 * u, yt - 2 * u, TL + 4 * u, 5 * u);
+      g.fillStyle = '#121822'; g.fillRect(x0 - 2 * u, yb - 7 * u, TL + 4 * u, 8 * u);
+      for (x = 0, i = 0; x < TL; x += 13 * u, i++) {
+        g.fillStyle = i % 2 ? '#e9edf2' : '#d23a3f';
+        var sw = Math.min(13 * u, TL - x) * 0.9; g.fillRect(x0 + x, yb - 5.5 * u, sw, 3.2 * u); g.fillRect(x0 + x, yt + 4 * u, sw, 2.6 * u);
+      }
+      if (logoReady) { var lh = WH * .9, lw = lh * 576 / 450; g.drawImage(LOGO, x0 + TL * .42 - lw / 2, yt + (WH - lh) / 2, lw, lh); }
+      g.fillStyle = '#d23a3f'; g.fillRect(x0 + TL - 3 * u, yb - 17 * u, 4 * u, 7 * u);
+    }
+    function drawMan(g, gy, E){
+      var u = U * Q.person, m = man, f = m.dir; g.setTransform(DPR, 0, 0, DPR, 0, 0); g.globalAlpha = 1; g.lineCap = 'round'; g.lineJoin = 'round';
+      var sw = m.moving ? Math.sin(m.ph) : 0, bob = m.moving ? Math.abs(Math.cos(m.ph)) * 1.4 * u : 0;
+      var hipX = m.x, hipY = gy - 20 * u - bob + m.bend * 4 * u;
+      g.fillStyle = 'rgba(3,8,20,.4)'; g.beginPath(); g.ellipse(m.x, gy - 1, 9 * u, 2.4 * u, 0, 0, 6.283); g.fill();
+      g.strokeStyle = '#1d2a40'; g.lineWidth = 5 * u;
+      function leg(s){
+        var fx = hipX + s * 7 * u, kx = hipX + s * 3.5 * u + f * m.bend * 4 * u;
+        g.beginPath(); g.moveTo(hipX, hipY); g.lineTo(kx, hipY + 10 * u - m.bend * 2 * u); g.lineTo(fx, gy - 2.5 * u); g.stroke();
+        g.fillStyle = '#0b0f16'; rrect(g, fx - 3 * u + f * 1.5 * u, gy - 4 * u, 6.5 * u, 4 * u, 1.2 * u); g.fill();
+      }
+      leg(sw); leg(-sw);
+      var ta = m.bend * 1.1 * f, sx = hipX + Math.sin(ta) * 17 * u, sy = hipY - Math.cos(ta) * 17 * u;
+      g.strokeStyle = '#2694f1'; g.lineWidth = 9.5 * u; g.beginPath(); g.moveTo(hipX, hipY); g.lineTo(sx, sy); g.stroke();
+      var hx = sx + Math.sin(ta) * 6.5 * u, hy = sy - Math.cos(ta) * 6.5 * u;
+      g.fillStyle = '#d6a47c'; g.beginPath(); g.arc(hx, hy, 4.6 * u, 0, 6.283); g.fill();
+      g.fillStyle = '#0f1b30'; g.beginPath(); g.arc(hx, hy - 0.8 * u, 4.9 * u, Math.PI, 0); g.fill(); g.fillRect(f > 0 ? hx : hx - 8 * u, hy - 1.6 * u, 8 * u, 1.9 * u);
+      var handX = null, handY = 0;
+      if (m.item) { var up = m.lift; handX = sx + f * 2 * u; handY = sy + (1 - up) * 13 * u - up * 11 * u; }
+      else if (m.st === 'toss') { k = Math.min(1, m.t / 0.22); handX = sx + f * (2 + k * 6) * u; handY = sy - 11 * u - k * 3 * u; }
+      else if (m.bend > 0.05) { handX = sx + f * 6 * u; handY = sy + 13 * u; }
+      if (m.item) {
+        var ix = handX, iy = handY - m.item.s.r * 0.55;
+        if (m.from && m.lift < 1) { ix = m.from.x + (ix - m.from.x) * m.lift; iy = (m.from.y + E) + (iy - (m.from.y + E)) * m.lift; }
+        draw(g, m.item, ix, iy, m.item.rot * (1 - m.lift), 1, 1); g.setTransform(DPR, 0, 0, DPR, 0, 0); g.globalAlpha = 1;
+      }
+      g.strokeStyle = '#d6a47c'; g.lineWidth = 3.4 * u;
+      if (handX !== null) { g.beginPath(); g.moveTo(sx - 1.5 * u, sy + 1 * u); g.lineTo(handX - 1.5 * u, handY); g.moveTo(sx + 1.5 * u, sy + 1 * u); g.lineTo(handX + 1.5 * u, handY); g.stroke(); }
+      else { g.beginPath(); g.moveTo(sx, sy + 1 * u); g.lineTo(sx + sw * 5 * u, sy + 14 * u); g.moveTo(sx, sy + 1 * u); g.lineTo(sx - sw * 5 * u, sy + 14 * u); g.stroke(); }
+    }
+    var k;
+    function drawCrew(g){
+      var tx = trailerX + truck.x, E = EXT, i;
+      drawTruck(g, tx - 26 * U, GY + E, truck.spin);
+      for (i = 0; i < load.length; i++) { var it = load[i]; draw(g, it, it.x, it.y + E, it.rot + it.a, 1, 1); }
+      drawTrailer(g, tx, GY + E, truck.spin);
+      for (i = 0; i < loose.length; i++) { var o = loose[i]; draw(g, o, o.x, o.y + E, o.a, 1, Math.max(0, 1 - o.fade)); }
+      g.globalAlpha = 1;
+      drawMan(g, GY + E, E);
+    }
+
     var sys = { step: function(dt, t){
       lastT = t;
       var rect = back.getBoundingClientRect(), lx = P.x - rect.left, ly = P.y - rect.top - EXT, near = P.live && lx > -100 && lx < W + 100 && ly > -EXT && ly < H + 60;
-      var R = DW.rubble.pushRadius * (phone() ? 0.8 : 1), R2 = R * R, K = C.spring, D = C.damping;
+      var R = C.pushRadius * (phone() ? 0.8 : 1), R2 = R * R;
       bg.setTransform(1, 0, 0, 1, 0, 0); bg.clearRect(0, 0, back.width, back.height);
       fg.setTransform(1, 0, 0, 1, 0, 0); fg.clearRect(0, 0, front.width, front.height);
-      // the pile's dark body, so gaps between chunks read as shadow
+      // the pile's dark body (and, under the truck, the ground), so gaps between junk read as shadow
       bg.setTransform(DPR, 0, 0, DPR, 0, EXT * DPR); bg.globalAlpha = 1;
       var grd = bg.createLinearGradient(0, H * 0.2, 0, H); grd.addColorStop(0, '#1d2f4f'); grd.addColorStop(1, '#0c1628');
       bg.fillStyle = grd; bg.beginPath(); bg.moveTo(0, H);
-      for (var x = 0; x <= W + 24; x += 24) bg.lineTo(x, surf(x, t) + 10);
+      for (var x = 0; x <= W + 24; x += 24) bg.lineTo(x, surf(x, t) + 10 * mask(x));
       bg.lineTo(W, H); bg.closePath(); bg.fill();
-      // dust motes rising out of the pile
       for (var i = 0; i < dust.length; i++) {
         var m = dust[i];
         m.y -= m.vy * dt; var mx = m.x + Math.sin(t * 0.9 + m.ph) * 10 + m.ox, my = m.y + m.oy;
@@ -525,30 +860,22 @@ var DW = {
         var g = c.d < 0.5 ? bg : fg;
         if (c.st === 0) {
           var px = hx + c.ox, py = hy + c.oy;
-          if (near) {
-            var dx = px - lx, dy = py - ly, d2 = dx * dx + dy * dy;
-            if (d2 < R2) {
-              var dd2 = Math.sqrt(d2) || 1, f = 1 - dd2 / R; f *= f;
-              c.vx += (dx / dd2 * C.push * f + P.vx * C.carry * f) * dt;
-              c.vy += (dy / dd2 * C.push * f + P.vy * C.carry * f) * dt;
-              c.av += (dx * P.vy - dy * P.vx) / dd2 * 0.0035 * f;
-              if (P.kick) { c.vy -= C.kick * f * (1.4 - c.d); c.vx += dx / dd2 * C.kick * 0.5 * f; c.av += (Math.random() - .5) * 14 * f; }
+          if (dt) { shove(c, px, py, c.d, near, lx, ly, R, R2, dt); spring(c, dt); }
+          c.px = hx + c.ox; c.py = hy + c.oy;
+          // shoved clear of the pile: it flies, then lands back in the heap (or on the ground by the truck)
+          if (c.d < 0.5 && c.vy < -150 && hy + c.oy < s - c.s.r * 1.1) {
+            c.st = 1; c.fx = c.px; c.fy = c.py; c.fvx = c.vx * 0.7; c.fvy = Math.min(c.vy * 0.7, -160); c.av = c.av || (Math.random() - .5) * 6;
+          } else draw(g, c, c.px, c.py + EXT, c.rot + c.a, 1, 1);
+        } else if (c.st === 1) {
+          c.fvy += C.gravity * dt; c.fx += c.fvx * dt; c.fy += c.fvy * dt; c.a += c.av * dt;
+          if (c.fvy > 0) {
+            if (mask(c.fx) > 0.3 && c.fy >= hy - 2) { c.st = 0; c.ox = c.fx - hx; c.oy = c.fy - hy; c.vx = c.fvx * 0.3; c.vy = 0; c.av *= 0.4; }
+            else if (mask(c.fx) <= 0.3 && c.fy >= GY - c.s.r * 0.55) {
+              loose.push({ s: c.s, x: c.fx, y: GY - c.s.r * 0.55, vx: c.fvx * 0.4, vy: -c.fvy * 0.25, a: c.rot + c.a, av: c.av * 0.4, st: 'fly', age: 0, fade: 0 });
+              vacate(c); continue;
             }
           }
-          c.vx += (-K * c.ox - D * c.vx) * dt; c.vy += (-K * c.oy - D * c.vy) * dt;
-          c.ox += c.vx * dt; c.oy += c.vy * dt;
-          c.av += (-K * 0.5 * c.a - D * 0.7 * c.av) * dt; c.a += c.av * dt;
-          // shoved clear of the pile: it breaks free and gets hauled off
-          if (c.d < 0.5 && c.vy < -150 && hy + c.oy < s - c.s.r * 1.1) {
-            c.st = 1; c.fx = px; c.fy = hy + c.oy; c.fvx = c.vx * 0.7; c.fvy = Math.min(c.vy * 0.7, -140); c.life = 0; c.av = c.av || (Math.random() - .5) * 6;
-          } else draw(g, c, px, py + EXT, c.rot + c.a, 1, 1);
-        } else if (c.st === 1) {
-          c.life += dt; c.fvy -= 90 * dt; c.fvx *= 0.985; c.fx += c.fvx * dt; c.fy += c.fvy * dt; c.a += c.av * dt;
-          var k = c.life / C.flyTime;
-          if (k >= 1) {
-            for (var q2 = 0; q2 < 3; q2++) { var nd = newDust(null, false); nd.x = c.fx + (Math.random() - .5) * 14; nd.y = c.fy + EXT; nd.vy = 30 + Math.random() * 30; dust.push(nd); if (dust.length > 140) dust.shift(); }
-            c.st = 2; c.wait = 0.4 + Math.random() * 1.4; c.ox = c.oy = c.vx = c.vy = c.a = c.av = 0; c.dy = -EXT - 30; c.dvy = 0;
-          } else draw(fg, c, c.fx, c.fy + EXT, c.rot + c.a, 1 - k * 0.35, 1 - k * k);
+          draw(fg, c, c.fx, c.fy + EXT, c.rot + c.a, 1, 1);
         } else {
           if (c.wait > 0) { c.wait -= dt; continue; }
           c.dvy += 1900 * dt; c.dy += c.dvy * dt;
@@ -557,6 +884,7 @@ var DW = {
         }
       }
       bg.globalAlpha = 1; fg.globalAlpha = 1;
+      if (crewOn) { crew(dt, near, lx, ly, R, R2); drawCrew(fg); }
     } };
     resize();
     add(sys, el);

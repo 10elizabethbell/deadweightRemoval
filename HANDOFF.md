@@ -4,8 +4,8 @@
 
 ## What's built
 - **One page, phone first:** top bar (wordmark + tap-to-call number top right), hero (headline, one promise line, one Text a photo button), "What we haul" (6 services as short names), "Photo to gone" (3 steps), the flyer's promises on an electric-blue band, "Before & after" (two drag sliders and one cleared-garage photo, then a "See our Facebook for more of our work" button), closing section with name, area and Text button, footer with name, area, number and Facebook.
-- **World:** the client's own logo. Chiseled concrete chunks, snapped steel chains, electric blue, navy night. Navy ground (`#0f1b30`, never black), steel-light services section, blue promise band. System fonts, heavy uppercase display.
-- **Signature element:** a rubble pile along the bottom of the hero and the close, about 230 chunks on phones and 750 on desktop, drawn as shaded solid blocks. The pile's surface rolls, mouse or finger shoves chunks around with a spring wobble, and a tap or upward swipe flings top chunks clear: they lift away, fade into dust, and fresh junk drops back in. The real logo, cut out of its dark square with an alpha matte (`src-assets/logo-cut.png`, not committed), stands *in* the pile: back rows behind it, front rows in front. Blue dust motes rise and dodge the pointer.
+- **World:** the client's own logo and their real trailers. Household junk, snapped steel chains, electric blue, navy night. Navy ground (`#0f1b30`, never black), steel-light services section, blue promise band. System fonts, heavy uppercase display.
+- **Signature element:** a junk pile along the bottom of the hero and the close (boxes, trash bags, tires, chairs, couches, mattresses, pallets, bins, TVs, buckets, branches, washers, all drawn in code). The surface rolls, mouse or finger shoves junk around with a spring wobble, and a tap or upward swipe flings pieces up; they fall back into the heap. In the hero, a worker walks from the pile to a pickup and black dump trailer (logo on the side, red/white tape, after Ellie's reference photos), picks junk up, carries it overhead and tosses it in. The mouse jumbles the load and can knock pieces out onto the ground; he fetches those first. When the trailer is full the truck drives off and backs in empty. Tunables: `DW.junk` and `DW.crew`. The real logo, cut out of its dark square with an alpha matte (`src-assets/logo-cut.png`, not committed), stands *in* the pile: back rows behind it, front rows in front. Blue dust motes rise and dodge the pointer.
 - **Chain seams:** every section boundary is a sagging, rippling steel chain (alternating ring and edge-on links) and the next section's color fills below the moving chain. Pushing it with a finger sends a wave along it. Below both piles the chain lies across the pile's base: the seam's top half is transparent.
 - **Contact:** every action uses 609-852-8552. "Text a photo" opens SMS with a pre-filled quote request (What needs to go / Town / When works / I'll attach a photo). Each service row texts with that service named. Calling is the header's top-right number (`tel:`), plus inline links in step 2 and the footer; no Call buttons and no sticky bar. On desktop the close button shows the number, and hovering a service updates a text-message preview card.
 - **Favicon and home-screen icon** are the strongman and diamond cropped from the logo (`favicon-32.png`, `apple-touch-icon.png`). **Link preview:** `og-image.jpg` (1200×630, logo on navy), with `og:url` pointing at the Pages site.
@@ -42,19 +42,18 @@
 
 ## Ideas not built (yours to pick)
 - **The chain snaps** (from the finish review): shove a seam hard enough and it breaks with a blue spark and throws links, then re-links. It's the logo's own gesture and the strongest next step for the signature.
-- **The close finishes the story** rather than repeating the hero: the closing pile mostly hauled away, a few chunks left.
+- **The close finishes the story** rather than repeating the hero: the closing pile mostly hauled away, a few pieces left, or the truck driving off full.
 - **Desktop text preview card** is plain white iMessage-style. It could take the world's steel and navy instead.
 - **Promise band on desktop** wraps in a two-column grid with a big gap; a single column or a marquee may read better.
 - **Runner-up world: "Snap the chains."** Swinging steel chains hang from the top of the hero (verlet rope physics). Drag one hard enough and it snaps with a blue spark, echoing the logo's strongman. The pile is more "junk"; chains are more "brand".
-- **Rubble that drains:** a "clear it" moment where scrolling into the close section empties the pile (haul-away), then it refills.
 - **Booking form page** (`book.html`) composing the same text: item type, size (single item / half truck / full truck), town, day, time window.
-- **Truck-load size picker** ("¼ / ½ / full truck") that fills a little truck bed with rubble. Only if they price by load.
+- **Truck-load size picker** ("¼ / ½ / full truck") that fills the hero trailer to that level. Only if they price by load.
 - Promise band could get a slowly scrolling marquee of the flyer lines.
 - Copy alternatives for the headline: "Your junk. Gone same day." / "We haul the dead weight."
 
 ## Not verified
 - Real-device touch feel (headless touch and mouse sweeps both move the pile and chains; flick-to-break-free not felt on glass). The hero pile blocking scroll on phones is per the finishing rules; check it doesn't feel stuck.
 - The real SMS handoff on iOS and Android, especially from inside Facebook's in-app browser. The `sms:+1…?&body=` form is the cross-platform one, but untested on devices.
-- Frame rate on older phones (~230 chunks + 4 chain seams; everything pauses off screen).
+- Frame rate on older phones (junk pile, crew + 5 chain seams; everything pauses off screen).
 - Reduced-motion still frame (code path exists, not screenshotted).
 - The concept-roll seed step of Impeccable's new-work flow was skipped: the build ran unattended per the pitch-site skill, and the world was chosen from the brief and logo without the interactive decision page.
