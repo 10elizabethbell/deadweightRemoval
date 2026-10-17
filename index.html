@@ -88,8 +88,8 @@ p{margin:0}
 .heap-logo{position:absolute;left:50%;bottom:30%;width:min(68vw,260px);aspect-ratio:576/450;transform:translateX(-50%);
   background:var(--logo) center/contain no-repeat}
 .hero .heap{--band:262px}
-.hero .heap-logo{left:auto;right:2px;transform:none;width:min(54vw,214px);bottom:34%}
-.hero .heap-glow{left:auto;right:-60px;transform:none;width:min(90vw,380px)}
+.hero .heap-logo{width:min(56vw,220px);bottom:36%}
+.hero .heap-glow{width:min(90vw,380px)}
 .heap-glow{position:absolute;left:50%;bottom:22%;width:min(110vw,520px);aspect-ratio:1.6;transform:translateX(-50%);z-index:0;pointer-events:none;
   background:radial-gradient(closest-side,rgba(38,148,241,.32),rgba(38,148,241,0))}
 
@@ -191,6 +191,8 @@ footer a{font-weight:700;padding:10px 0;margin:-10px 0;color:var(--chrome);font-
   .svc-note{display:none}
   .steps{grid-template-columns:repeat(3,1fr);gap:40px}
   .work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;max-width:900px}
+  .hero .heap-logo{left:auto;right:2px;transform:none}
+  .hero .heap-glow{left:auto;right:-60px;transform:none}
   .btn-fb{display:inline-flex;font-size:18px;padding:0 22px}
   .step{grid-template-columns:1fr;gap:14px}
   .step-n{font-size:84px}
@@ -377,7 +379,7 @@ var DW = {
     dustPhone: 18, dustDesk: 40    // rising dust motes
   },
   crew: {
-    scalePhone: 0.62, scaleDesk: 1, // truck, trailer and worker size
+    scalePhone: 0.5, scaleDesk: 1,  // truck, trailer and worker size
     walk: 70,                      // worker walking speed (px/s at desktop size)
     person: 1.4,                   // worker size relative to the truck
     gap: 70,                       // open ground between the trailer and the pile
@@ -573,7 +575,7 @@ var DW = {
     var bg = back.getContext('2d'), fg = front.getContext('2d');
     var C = DW.junk, Q = DW.crew, crewOn = el.hasAttribute('data-crew');
     var W, H, EXT, U = 1, chunks = [], dust = [], loose = [], load = [], cols = [], ph = seed, lastT = 0;
-    var GY, TL, WH, WR, trailerX, clearEnd, reach, dropX, cap, truck, man;
+    var pool, GY, TL, WH, WR, trailerX, clearEnd, reach, dropX, cap, truck, man;
     function mask(x){ if (!crewOn) return 1; var k = (x - clearEnd) / (70 * U); return k <= 0 ? 0 : k >= 1 ? 1 : k * k * (3 - 2 * k); }
     function surf(x, t){
       var s = C.roll;
@@ -583,15 +585,15 @@ var DW = {
     function resize(){
       var d = fitCanvas(back); fitCanvas(front);
       W = d.w; EXT = d.h - el.clientHeight; H = el.clientHeight;
-      var mob = phone(), r = rng(seed * 977 + 13), L = mob ? C.lanesPhone : C.lanesDesk, set = sprites(mob ? C.sizePhone : C.sizeDesk);
+      var mob = phone(), r = rng(seed * 977 + 13), L = mob ? C.lanesPhone : C.lanesDesk, set = sprites(mob ? C.sizePhone : C.sizeDesk); pool = set;
       U = mob ? Q.scalePhone : Q.scaleDesk; GY = H - (mob ? 40 : 26); TL = 210 * U; WH = 58 * U; WR = 15 * U;
-      trailerX = mob ? 8 : Math.max(24, W * 0.40 - 14 * U - TL); clearEnd = trailerX + TL + Q.gap * U; reach = clearEnd + 100 * U; dropX = trailerX + TL + 9 * U;
+      trailerX = mob ? 6 + 219 * U : Math.max(24, W * 0.40 - 14 * U - TL); clearEnd = trailerX + TL + Q.gap * U; reach = clearEnd + 100 * U; dropX = trailerX + TL + 9 * U;
       chunks = []; loose = []; load = [];
       for (var j = 0; j < L; j++) {
         var depth = j / (L - 1), tier = depth < 0.34 ? 0 : depth < 0.67 ? 1 : 2, x = -20;
         while (x < W + 20) {
           var sp = set[tier][Math.floor(r() * set[tier].length)], x0 = x + (r() - .5) * sp.r * 0.6;
-          if (mask(x0) > 0.2) chunks.push({ s: sp, x0: x0, d: depth, jy: (r() - .5) * (H * (1 - C.surface) / (L - 1)) * 0.9, ph: r() * 6.28, rot: (r() - .5) * 1.1,
+          if (mask(x0) > 0.2) chunks.push({ s: sp, x0: x0, d: depth, lane: j, tier: tier, hx: x0, hy: 0, jy: (r() - .5) * (H * (1 - C.surface) / (L - 1)) * 0.9, ph: r() * 6.28, rot: (r() - .5) * 1.1,
             ox: 0, oy: 0, vx: 0, vy: 0, a: 0, av: 0, st: 0, fx: 0, fy: 0, fvx: 0, fvy: 0, wait: 0, dy: 0, dvy: 0, px: 0, py: 0 });
           x += sp.r * (1.25 + r() * 0.5);
         }
@@ -661,7 +663,21 @@ var DW = {
       var ch = cand[Math.floor(Math.random() * Math.min(cand.length, 6))];
       return { x: function(){ return ch.x0; }, gone: function(){ return ch.st !== 0; },
         standX: function(){ return Math.max(dropX + 10 * U, Math.min(ch.x0 - 8 * U, clearEnd + 34 * U)); },
-        take: function(){ if (ch.st !== 0) return null; man.from = { x: ch.px, y: ch.py }; vacate(ch); return { s: ch.s, rot: ch.rot }; } };
+        take: function(){ if (ch.st !== 0) return null; man.from = { x: ch.px, y: ch.py }; var got = { s: ch.s, rot: ch.rot }; slump(ch); return got; } };
+    }
+    // the row slumps toward the worker, and a fresh piece drops in on the right side of the pile
+    function slump(ch){
+      var row = [], i, c;
+      for (i = 0; i < chunks.length; i++) { c = chunks[i]; if (c.lane === ch.lane && c.x0 >= ch.x0) row.push(c); }
+      row.sort(function(a, b){ return a.x0 - b.x0; });
+      var lo = clearEnd + (W - clearEnd) * 0.6, hi = W - 20, end = 0;
+      for (i = 1; i < row.length; i++) { if (row[i].st !== 0) break; end = i; if (row[i].x0 >= lo && (row[i].x0 > hi || Math.random() < 0.35)) break; }
+      for (i = 0; i < end; i++) {
+        var a = row[i], b = row[i + 1];
+        a.s = b.s; a.rot = b.rot; a.a = b.a; a.av = b.av; a.vx = b.vx; a.vy = b.vy; a.ox = b.px - a.hx; a.oy = b.py - a.hy;
+      }
+      var last = row[end]; vacate(last);
+      last.s = pool[last.tier][Math.floor(Math.random() * pool[last.tier].length)]; last.rot = (Math.random() - .5) * 1.1; last.wait = 0.2 + Math.random() * 0.5;
     }
     function handsY(){ return GY - 48 * U * Q.person; }
     function crew(dt, near, lx, ly, R, R2){
@@ -871,7 +887,7 @@ var DW = {
         if (c.st === 0) {
           var px = hx + c.ox, py = hy + c.oy;
           if (dt) { shove(c, px, py, c.d, near, lx, ly, R, R2, dt); spring(c, dt); }
-          c.px = hx + c.ox; c.py = hy + c.oy;
+          c.px = hx + c.ox; c.py = hy + c.oy; c.hx = hx; c.hy = hy;
           // shoved clear of the pile: it flies, then lands back in the heap (or on the ground by the truck)
           if (c.d < 0.5 && c.vy < -150 && hy + c.oy < s - c.s.r * 1.1) {
             c.st = 1; c.fx = c.px; c.fy = c.py; c.fvx = c.vx * 0.7; c.fvy = Math.min(c.vy * 0.7, -160); c.av = c.av || (Math.random() - .5) * 6;
